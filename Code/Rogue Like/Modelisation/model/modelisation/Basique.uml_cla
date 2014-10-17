@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.3.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:97302b02-2160-4e93-873b-07defcd788d8'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Basique'
+   visibility='public'>
+  <clientDependency href='urn:uuid:7bae02a0-ca46-46b0-a908-5d6fa50c7f6a'/>
+  <interfaceRealization xmi:type='uml:InterfaceRealization' xmi:uuid='urn:uuid:7bae02a0-ca46-46b0-a908-5d6fa50c7f6a'
+    visibility='public'>
+   <contract href='urn:uuid:da7a59cc-ca7a-4d24-b62f-eee0873370c0'/>
+   <client href='urn:uuid:97302b02-2160-4e93-873b-07defcd788d8'/>
+   <supplier href='urn:uuid:da7a59cc-ca7a-4d24-b62f-eee0873370c0'/>
+  </interfaceRealization>
+ </uml:Class>
+</xmi:XMI>

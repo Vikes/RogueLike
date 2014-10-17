@@ -10,7 +10,87 @@
    visibility='public'>
   <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:3c2b5ed1-d460-4dec-807a-248dceb108e6'
     isSubstitutable='true'>
-   <general href='urn:uuid:bb749098-fa80-4737-a7f2-1dec7862936e'/>
+   <general href='urn:uuid:07ee4e32-ecb4-4245-98de-f687f0563b03'/>
   </generalization>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:c36bb7e2-b73b-4edf-b31a-08ccbd54b50c'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='nomPersonnage'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:c1d15d6c-8261-493a-8ea0-dd3053085c1b'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:fe67417b-892f-43fd-b371-ca78b62cad8c'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:dd0552db-9e1b-47b2-a01e-336fb1f6ee05'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='forcePersonnage'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:79236fff-7bcc-4b9f-90ea-84739c6feae5'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:fab19b1d-87dd-4cbe-a9ae-27acd2d51fae'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:87479116-cc31-40d9-8ed7-2732f85db113'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='argentPersonnage'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:9f52fb28-cc28-4eeb-9739-46d89131e22c'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:b07995b9-4bb9-41c9-a772-ecbd60ca0c80'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:4facaa08-fa06-47aa-ade2-a209a912f6c0'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='viePersonnage'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:0347ce2c-1ee7-45b8-970c-df3d64e9c408'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:ba7b8ff4-4448-46e4-a0d3-d37923d7de44'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
  </uml:Class>
 </xmi:XMI>

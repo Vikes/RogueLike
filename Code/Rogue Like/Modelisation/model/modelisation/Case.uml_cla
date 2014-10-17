@@ -12,5 +12,45 @@
     isSubstitutable='true'>
    <general href='urn:uuid:dfa9084c-2d51-4f85-9d2b-3594b7f5d289'/>
   </generalization>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:b43eccb2-479c-42aa-829f-9df4bbf27ff4'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='positionX'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:8d694a9b-2c31-4847-8a4c-92d1261d33fa'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:acd820c5-7d4f-4908-a3e9-7df934cb97a2'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:f5075cb2-b1f7-45d9-92e0-693215f2de2b'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='positionY'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:dba3b68c-6606-4708-bb79-99d316a3b173'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:5ed84c96-8ee6-4aea-99a5-326521ea0d4a'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
  </uml:Class>
 </xmi:XMI>

@@ -12,5 +12,65 @@
     isSubstitutable='true'>
    <general href='urn:uuid:bb749098-fa80-4737-a7f2-1dec7862936e'/>
   </generalization>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:4bcd87ab-2bb6-4d19-afba-b7aca60d1cca'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='vieMonstre'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:10ae462b-bb01-48af-8bbe-9b5f0b3e96cb'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:6ca74807-5157-402e-bad8-1dda5cabf914'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:a4456c9c-480f-46f4-9a95-67607bc484b4'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='forceMonstre'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:5c03723e-59ec-4357-8aa9-358af6be6ab6'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:70027b15-3f63-41ca-a76b-24751ea8d171'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:fd219a29-9e90-413e-905a-a079ef4a5be3'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='argentMonstre'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:1db53705-3b37-4da2-9923-8fe870eca304'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:74ab6832-8e56-4d8a-b74c-dd801c082368'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
  </uml:Class>
 </xmi:XMI>

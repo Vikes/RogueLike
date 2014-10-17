@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.3.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:07ee4e32-ecb4-4245-98de-f687f0563b03'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Case'
+   visibility='public'>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:6147a58c-40c8-4ae7-b983-7be8e8004e32'
+    isSubstitutable='true'>
+   <general href='urn:uuid:dfa9084c-2d51-4f85-9d2b-3594b7f5d289'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>

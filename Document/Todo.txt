@@ -1,1 +1,2 @@
 Classes escaliers fils
+Relation bi orientée

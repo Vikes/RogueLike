@@ -309,7 +309,7 @@
       <size xmi:type='DI:Dimension' height='120.0' width='120.0'/>
     </contained>
     <contained xmi:type='DI:GraphNode' xmi:id='id348b2f44-de9a-42a7-8c0c-548a56ae3fde'>
-      <anchorage xmi:type='DI:GraphConnector' xmi:id='id71f996eb-ca9a-4f41-8f1a-8237d4070bb8' graphEdge='id0fe23715-27b8-40c8-972d-cee4b4a4031a id18aa299c-ec0e-46f2-b35d-e06b16e10f8f id232f4d8c-7c44-453f-a99e-ae03bec9d043 id4e140a27-a583-427a-9d16-c7693c56b84d id6acc25b6-fcaf-4999-b7f4-8205a47eb3c4'/>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id71f996eb-ca9a-4f41-8f1a-8237d4070bb8' graphEdge='id18aa299c-ec0e-46f2-b35d-e06b16e10f8f id232f4d8c-7c44-453f-a99e-ae03bec9d043 id4e140a27-a583-427a-9d16-c7693c56b84d id6acc25b6-fcaf-4999-b7f4-8205a47eb3c4 id84b8777a-e3b4-4657-a6d0-9914ed3e5764'/>
       <contained xmi:type='DI:GraphNode' xmi:id='idacf770cc-e389-467c-b45d-55d2aa0f16bd'>
         <contained xmi:type='DI:GraphNode' xmi:id='id1e06bd40-0320-46c8-809e-765668b5af4b'>
           <contained xmi:type='DI:GraphNode' xmi:id='idf177235c-48a3-4faa-b9c5-09800d932aa0'>
@@ -1389,7 +1389,7 @@
       <size xmi:type='DI:Dimension' height='120.0' width='120.0'/>
     </contained>
     <contained xmi:type='DI:GraphNode' xmi:id='id10a7d855-5b8f-4637-93f3-29b86aca6e79'>
-      <anchorage xmi:type='DI:GraphConnector' xmi:id='id04c4f34a-eb78-4e26-91ae-a2c48cca7ef4' graphEdge='id0fe23715-27b8-40c8-972d-cee4b4a4031a id232f4d8c-7c44-453f-a99e-ae03bec9d043 idc3fd124c-ab48-40a5-8c67-3ba700f88f08'/>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id04c4f34a-eb78-4e26-91ae-a2c48cca7ef4' graphEdge='id232f4d8c-7c44-453f-a99e-ae03bec9d043 id84b8777a-e3b4-4657-a6d0-9914ed3e5764 idc3fd124c-ab48-40a5-8c67-3ba700f88f08'/>
       <contained xmi:type='DI:GraphNode' xmi:id='id23b5774e-0cec-4b06-9e8e-d85a216f4c6a'>
         <contained xmi:type='DI:GraphNode' xmi:id='id2900403b-d668-450f-8d47-d8b3a7473192'>
           <contained xmi:type='DI:GraphNode' xmi:id='id16bcdb59-32af-417b-8ca6-3faad8069d67'>
@@ -1675,7 +1675,7 @@
           <contained xmi:type='DI:GraphNode' xmi:id='id169e4b70-ea22-4d83-9400-4cf3982c46ec'>
             <contained xmi:type='DI:GraphNode' xmi:id='id806b9a49-a39d-46f6-b148-b56b3e0a00b8'>
               <property xmi:type='DI:Property' key='id' value='classifierSingleCell'/>
-              <property xmi:type='DI:Property' key='preferredWidth' value='0.0'/>
+              <property xmi:type='DI:Property' key='preferredWidth' value='95.0'/>
               <property xmi:type='DI:Property' key='visible' value='true'/>
               <property xmi:type='DI:Property' key='editable' value='true'/>
               <property xmi:type='DI:Property' key='fixedWidth' value='false'/>
@@ -2215,7 +2215,7 @@
           <contained xmi:type='DI:GraphNode' xmi:id='idef10bc01-7fb4-4c03-ad1d-fea1bbdac278'>
             <contained xmi:type='DI:GraphNode' xmi:id='id1662562b-f69d-413f-8796-c9266c7a29c2'>
               <property xmi:type='DI:Property' key='id' value='classifierSingleCell'/>
-              <property xmi:type='DI:Property' key='preferredWidth' value='0.0'/>
+              <property xmi:type='DI:Property' key='preferredWidth' value='76.0'/>
               <property xmi:type='DI:Property' key='visible' value='true'/>
               <property xmi:type='DI:Property' key='editable' value='true'/>
               <property xmi:type='DI:Property' key='fixedWidth' value='false'/>
@@ -4777,7 +4777,7 @@
           <contained xmi:type='DI:GraphNode' xmi:id='id0286220c-932d-482c-b939-3f254be32743'>
             <contained xmi:type='DI:GraphNode' xmi:id='id11eef059-3f77-490f-83a5-8ab0ca243532'>
               <property xmi:type='DI:Property' key='id' value='classifierSingleCell'/>
-              <property xmi:type='DI:Property' key='preferredWidth' value='0.0'/>
+              <property xmi:type='DI:Property' key='preferredWidth' value='142.0'/>
               <property xmi:type='DI:Property' key='visible' value='true'/>
               <property xmi:type='DI:Property' key='editable' value='true'/>
               <property xmi:type='DI:Property' key='fixedWidth' value='false'/>
@@ -6288,59 +6288,57 @@
       <waypoint xmi:type='DI:Point' x='636.1790771484375' y='418.97857666015625'/>
       <waypoint xmi:type='DI:Point' x='675.0000610351562' y='418.97857666015625'/>
     </contained>
-    <contained xmi:type='DI:GraphEdge' xmi:id='id0fe23715-27b8-40c8-972d-cee4b4a4031a' anchor='id71f996eb-ca9a-4f41-8f1a-8237d4070bb8 id04c4f34a-eb78-4e26-91ae-a2c48cca7ef4'>
-      <contained xmi:type='DI:GraphNode' xmi:id='id83537d50-6c2f-4ca4-b95b-5c2dfbb46ae7'>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id84b8777a-e3b4-4657-a6d0-9914ed3e5764' anchor='id71f996eb-ca9a-4f41-8f1a-8237d4070bb8 id04c4f34a-eb78-4e26-91ae-a2c48cca7ef4'>
+      <contained xmi:type='DI:GraphNode' xmi:id='idae2debca-7e9a-4a2f-93f0-e8d02e80133d'>
         <position xmi:type='DI:Point' x='4.0' y='-25.47607421875'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
       </contained>
-      <contained xmi:type='DI:GraphNode' xmi:id='idcc6391b0-0eec-4801-95e5-708c72e2e376'>
+      <contained xmi:type='DI:GraphNode' xmi:id='idc250dfd2-43bb-4dc1-aad9-3d7bc64bfaa9'>
         <position xmi:type='DI:Point' x='4.0' y='4.0'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
       </contained>
-      <contained xmi:type='DI:GraphNode' xmi:id='idde682051-4820-4b45-ac4b-8e7b7ff1fe28'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id51d2c4e0-abc7-4667-b5d6-4739faafc24c'>
         <position xmi:type='DI:Point' x='4.0' y='-50.9521484375'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourceassociationAdditional'/>
       </contained>
-      <contained xmi:type='DI:GraphNode' xmi:id='idf7decc28-c491-4301-90b7-46b42328990f'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id087132df-5ca2-4e19-86ea-8e582340c135'>
         <position xmi:type='DI:Point' x='4.0' y='4.0'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
       </contained>
-      <contained xmi:type='DI:GraphNode' xmi:id='id10f79a2f-0e41-458c-a5cb-3adeb00a4bfb'>
+      <contained xmi:type='DI:GraphNode' xmi:id='ida9c246f2-0b79-4e5f-bc68-c7c9444d8359'>
         <position xmi:type='DI:Point' x='-75.015625' y='4.0'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
       </contained>
-      <contained xmi:type='DI:GraphNode' xmi:id='id189b51dc-0e4f-4564-b3c4-7877b3ae8786'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id58c04027-854c-45d0-ba9f-c5bc36e58ce6'>
         <position xmi:type='DI:Point' x='-80.0' y='-25.47607421875'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
       </contained>
-      <contained xmi:type='DI:GraphNode' xmi:id='id1234afc9-1942-4b91-8a5d-9e1f4f780191'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id2a1c93c2-6377-4939-9054-c6a4de2def65'>
         <position xmi:type='DI:Point' x='4.0' y='-25.47607421875'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
       </contained>
-      <contained xmi:type='DI:GraphNode' xmi:id='id99a8508e-b3e4-4fc1-875e-1b22854de350'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id546904d9-b3c7-400d-ac80-cb338bae7457'>
         <position xmi:type='DI:Point' x='-15.0' y='-50.9521484375'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationassociationAdditional'/>
       </contained>
-      <property xmi:type='DI:Property' key='showOrdered' value='false'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='showReadOnly' value='false'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='true'/>
       <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='showUnion' value='false'/>
+      <property xmi:type='DI:Property' key='showOrdered' value='false'/>
       <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
       <property xmi:type='DI:Property' key='showSubsets' value='false'/>
       <property xmi:type='DI:Property' key='fontColor' value='#0'/>
-      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
       <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
-      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
-      <property xmi:type='DI:Property' key='showRoleNames' value='true'/>
-      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
-      <property xmi:type='DI:Property' key='showUnion' value='false'/>
       <property xmi:type='DI:Property' key='showRedefinition' value='false'/>
-      <property xmi:type='DI:Property' key='showReadOnly' value='false'/>
-      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
-      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='uml:Association:urn:uuid:15d1ba0d-8b8f-44c9-9046-82562441daa1'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='uml:Association:urn:uuid:6478d20e-94ae-4eec-9c4f-14871c8d8776'/>
       <waypoint xmi:type='DI:Point' x='615.0' y='255.0'/>
-      <waypoint xmi:type='DI:Point' x='664.4537353515625' y='255.0'/>
-      <waypoint xmi:type='DI:Point' x='664.4537353515625' y='332.8694763183594'/>
-      <waypoint xmi:type='DI:Point' x='735.0000610351562' y='332.8694763183594'/>
-      <waypoint xmi:type='DI:Point' x='735.0000610351562' y='360.0'/>
+      <waypoint xmi:type='DI:Point' x='690.1578979492188' y='255.0'/>
+      <waypoint xmi:type='DI:Point' x='690.1578979492188' y='360.0'/>
     </contained>
     <property xmi:type='DI:Property' key='alignmentRulersColor' value='#99d9ea'/>
     <property xmi:type='DI:Property' key='PageOrientation' value='1'/>

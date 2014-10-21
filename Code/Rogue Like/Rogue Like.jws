@@ -23,6 +23,7 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
+      <hash><url n="URL" path="../../../../../../../JDeveloper/mywork/tpQuorid/TpQuoridor/TpQuoridor.jpr"/></hash>
       <hash><url n="URL" path="Modelisation/Modelisation.jpr"/></hash>
    </list>
 </jws:workspace>

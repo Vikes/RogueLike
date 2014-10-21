@@ -7,5 +7,22 @@
    isFinalSpecialization='false'
    isLeaf='false'
    name='Partie'
-   visibility='public'/>
+   visibility='public'>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:43933090-24db-4b6e-820c-962375e50796'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='Combat'
+    concurrency='sequential'
+    visibility='package'/>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:10e587d1-b425-481e-ab1c-5c0aa93fcc7a'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='Mouvement'
+    concurrency='sequential'
+    visibility='package'/>
+ </uml:Class>
 </xmi:XMI>

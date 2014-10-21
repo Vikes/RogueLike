@@ -19,7 +19,7 @@
     isUnique='true'
     name='symbole'
     aggregation='none'
-    visibility='package'>
+    visibility='private'>
    <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String'/>
    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:e47cadba-898c-4c6c-84a3-2afafae47bae'
      value='1'

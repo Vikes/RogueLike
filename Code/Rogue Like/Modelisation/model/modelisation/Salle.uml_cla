@@ -68,5 +68,13 @@
     name='getOr'
     concurrency='sequential'
     visibility='public'/>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:6db1af51-8447-4d8e-a113-948c4ed5f11a'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getNbrPiece : Integer'
+    concurrency='sequential'
+    visibility='public'/>
  </uml:Class>
 </xmi:XMI>

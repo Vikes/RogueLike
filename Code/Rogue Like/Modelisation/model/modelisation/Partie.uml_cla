@@ -28,6 +28,46 @@
      value='1'
      visibility='public'/>
   </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:de4e7a6a-66f8-404f-984e-21b5dfdd1b1a'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='finie'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:52002951-c8a0-4163-8789-980ab530cb72'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:4c6726bc-d62d-40e0-9f6b-c222b9e25aba'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:f972c8df-55fc-4311-8f33-41311d5c7803'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='touche'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:245c4237-1274-448c-9f0a-4c073a25bb88'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:57344765-2fbf-4317-86a2-40f536638bd7'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:43933090-24db-4b6e-820c-962375e50796'
     isAbstract='false'
     isLeaf='false'
@@ -35,7 +75,7 @@
     isStatic='false'
     name='Combat'
     concurrency='sequential'
-    visibility='package'/>
+    visibility='private'/>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:10e587d1-b425-481e-ab1c-5c0aa93fcc7a'
     isAbstract='false'
     isLeaf='false'
@@ -43,6 +83,6 @@
     isStatic='false'
     name='Mouvement'
     concurrency='sequential'
-    visibility='package'/>
+    visibility='private'/>
  </uml:Class>
 </xmi:XMI>

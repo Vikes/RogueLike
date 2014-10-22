@@ -23,7 +23,7 @@
     isUnique='true'
     name='tailleSalle'
     aggregation='none'
-    visibility='package'>
+    visibility='private'>
    <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:4e6480eb-ae61-4299-bc5b-7969c487e4e7'
      value='1'
@@ -32,5 +32,41 @@
      value='1'
      visibility='public'/>
   </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:c19584c8-3833-4a00-87cb-a9c3fe83ec7b'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='niveau'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:6e01b558-8043-4270-a10f-a3f1839a7423'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:8c32d33c-df2b-4f4f-9217-0ec0be1a6c59'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:a556d118-5ac2-4b3f-b3ed-e879c50977fd'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getMonstres'
+    concurrency='sequential'
+    visibility='public'/>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:7cf0a3e4-967d-43ad-bb4c-1450782c9597'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getOr'
+    concurrency='sequential'
+    visibility='public'/>
  </uml:Class>
 </xmi:XMI>

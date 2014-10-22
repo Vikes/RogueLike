@@ -7,5 +7,22 @@
    isFinalSpecialization='false'
    isLeaf='false'
    name='ElemRecursif'
-   visibility='public'/>
+   visibility='public'>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:65e776ec-715b-457e-9f6d-f78c6287f504'
+    isAbstract='true'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getOr'
+    concurrency='sequential'
+    visibility='public'/>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:81e30c49-e12d-4671-b630-9ca2c0cbc7b9'
+    isAbstract='true'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getMonstres'
+    concurrency='sequential'
+    visibility='public'/>
+ </uml:Class>
 </xmi:XMI>

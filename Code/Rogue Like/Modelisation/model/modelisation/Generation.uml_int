@@ -6,5 +6,14 @@
    isFinalSpecialization='false'
    isLeaf='false'
    name='Generation'
-   visibility='public'/>
+   visibility='public'>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:6a6b22a7-4481-41ce-9ace-4cc60e7439ba'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='generer'
+    concurrency='sequential'
+    visibility='public'/>
+ </uml:Interface>
 </xmi:XMI>

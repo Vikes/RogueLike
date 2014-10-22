@@ -23,8 +23,8 @@
     isUnique='true'
     name='bonus'
     aggregation='none'
-    visibility='package'>
-   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String'/>
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:0f9e70ee-e926-47ee-b985-f53bb921956d'
      value='1'
      visibility='public'/>

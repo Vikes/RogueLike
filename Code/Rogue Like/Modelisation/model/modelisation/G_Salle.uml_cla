@@ -7,5 +7,24 @@
    isFinalSpecialization='false'
    isLeaf='false'
    name='G_Salle'
-   visibility='public'/>
+   visibility='public'>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:2e079d36-75a5-4d8c-8e0e-a006c178f38e'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='ajouterSalle'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:d6964931-b097-4fb0-b237-c6a37993ae9f'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='Salle'
+     direction='in'>
+    <type href='urn:uuid:29f3768f-04fc-4412-a6de-c200b42c469b'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
 </xmi:XMI>

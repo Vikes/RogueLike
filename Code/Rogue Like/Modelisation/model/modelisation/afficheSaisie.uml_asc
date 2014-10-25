@@ -6,11 +6,11 @@
    isDerived='false'
    isFinalSpecialization='false'
    isLeaf='false'
-   name='Association9'
+   name='afficheSaisie'
    visibility='public'>
   <memberEnd href='urn:uuid:4791cdf2-c29f-4241-8a6e-5f3709058c90'/>
   <memberEnd href='urn:uuid:b8a67b8c-5eda-40d5-a44f-6b5d8118915f'/>
-  <navigableOwnedEnd href='urn:uuid:b8a67b8c-5eda-40d5-a44f-6b5d8118915f'/>
+  <navigableOwnedEnd href='urn:uuid:4791cdf2-c29f-4241-8a6e-5f3709058c90'/>
   <ownedEnd xmi:type='uml:Property' xmi:uuid='urn:uuid:4791cdf2-c29f-4241-8a6e-5f3709058c90'
     isDerived='false'
     isDerivedUnion='false'
@@ -20,7 +20,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endSaisie'
+    name='Saisie'
     aggregation='none'>
    <association href='urn:uuid:4245f240-7d35-42b6-8bdf-0e815d65e54e'/>
    <type href='urn:uuid:90fb6b20-2362-4f18-9647-5eb0b4308dba'/>
@@ -40,7 +40,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endFrame'
+    name=''
     aggregation='none'>
    <association href='urn:uuid:4245f240-7d35-42b6-8bdf-0e815d65e54e'/>
    <type href='urn:uuid:5e664f7e-a4af-4d25-84f6-b075e5a2abd9'/>

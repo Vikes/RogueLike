@@ -20,7 +20,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endCase'
+    name=''
     aggregation='none'>
    <association href='urn:uuid:64a782b3-99f9-4c00-bf12-2e32051e2b02'/>
    <type href='urn:uuid:07ee4e32-ecb4-4245-98de-f687f0563b03'/>
@@ -40,7 +40,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endElement'
+    name='Element'
     aggregation='none'>
    <association href='urn:uuid:64a782b3-99f9-4c00-bf12-2e32051e2b02'/>
    <type href='urn:uuid:bb749098-fa80-4737-a7f2-1dec7862936e'/>

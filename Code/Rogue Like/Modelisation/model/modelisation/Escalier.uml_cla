@@ -6,6 +6,65 @@
    isActive='false'
    isFinalSpecialization='false'
    isLeaf='false'
-   name='Class1'
-   visibility='public'/>
+   name='Escalier'
+   visibility='public'>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:8daee804-eb3d-4621-836e-6ed1640066ee'
+    isSubstitutable='true'>
+   <general href='urn:uuid:07ee4e32-ecb4-4245-98de-f687f0563b03'/>
+  </generalization>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:3949d184-80df-4783-8dca-d0ac576c62c9'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='type'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:3bafe8f6-9a24-4d93-945d-6f69c6cd944c'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:9fae94f1-8610-4241-b02e-857b2b13b2ae'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:cf02754a-9b19-44ec-b0e2-eaeb6c533ac2'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getMontres'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:9bfab47e-72ad-443c-a7b6-4d64184f14a1'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:070f7530-87a1-454a-9ed4-95f8b4653c29'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getOr'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:bea78b71-ba4d-4abf-8d2b-52585d2caf10'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
 </xmi:XMI>

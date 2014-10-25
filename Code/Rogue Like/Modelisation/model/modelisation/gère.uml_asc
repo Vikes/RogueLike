@@ -6,7 +6,7 @@
    isDerived='false'
    isFinalSpecialization='false'
    isLeaf='false'
-   name='Association6'
+   name='gère'
    visibility='public'>
   <memberEnd href='urn:uuid:68cfbb91-759a-42e9-801f-753c334d0fb4'/>
   <memberEnd href='urn:uuid:d7c4f1d1-140a-495d-ad30-61bd52f04ef4'/>
@@ -20,7 +20,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endG_Salle'
+    name=''
     aggregation='none'>
    <association href='urn:uuid:0b32eaa1-1893-4eca-b34e-8a4d9d6b1a11'/>
    <type href='urn:uuid:e26c50d4-c719-43df-bc71-94fa81e5429e'/>
@@ -40,7 +40,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endSalle'
+    name='lstSalle'
     aggregation='none'>
    <association href='urn:uuid:0b32eaa1-1893-4eca-b34e-8a4d9d6b1a11'/>
    <type href='urn:uuid:29f3768f-04fc-4412-a6de-c200b42c469b'/>

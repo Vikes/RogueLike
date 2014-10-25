@@ -20,7 +20,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endSouterrain'
+    name=''
     aggregation='none'>
    <association href='urn:uuid:aae3f87b-1226-4d84-9ab1-5a95168f203f'/>
    <type href='urn:uuid:c556ad62-f21d-4fa8-a017-c8f930952f8f'/>
@@ -40,7 +40,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endSouterrain_1'
+    name='Souterrain'
     aggregation='composite'>
    <association href='urn:uuid:aae3f87b-1226-4d84-9ab1-5a95168f203f'/>
    <type href='urn:uuid:c556ad62-f21d-4fa8-a017-c8f930952f8f'/>

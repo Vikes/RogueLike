@@ -6,11 +6,11 @@
    isDerived='false'
    isFinalSpecialization='false'
    isLeaf='false'
-   name='Association8'
+   name='afficheCarte'
    visibility='public'>
   <memberEnd href='urn:uuid:79fde652-f728-463a-add5-a4d2c2cabe0b'/>
   <memberEnd href='urn:uuid:bacd6478-3269-47a2-a807-746e159a2869'/>
-  <navigableOwnedEnd href='urn:uuid:bacd6478-3269-47a2-a807-746e159a2869'/>
+  <navigableOwnedEnd href='urn:uuid:79fde652-f728-463a-add5-a4d2c2cabe0b'/>
   <ownedEnd xmi:type='uml:Property' xmi:uuid='urn:uuid:79fde652-f728-463a-add5-a4d2c2cabe0b'
     isDerived='false'
     isDerivedUnion='false'
@@ -20,7 +20,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endCarte'
+    name='Carte'
     aggregation='none'>
    <association href='urn:uuid:c296ad1a-f9e6-4835-8dba-d953804ca304'/>
    <type href='urn:uuid:a0464ca4-d901-49c9-bc94-1a1d92aead28'/>
@@ -40,7 +40,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endFrame'
+    name=''
     aggregation='none'>
    <association href='urn:uuid:c296ad1a-f9e6-4835-8dba-d953804ca304'/>
    <type href='urn:uuid:5e664f7e-a4af-4d25-84f6-b075e5a2abd9'/>

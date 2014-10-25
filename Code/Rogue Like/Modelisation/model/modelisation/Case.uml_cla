@@ -72,5 +72,25 @@
      value='1'
      visibility='public'/>
   </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:d37d88fd-1d67-4fcf-9992-724ccfa5fb77'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='symbole'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:d49ae62f-7507-4078-868f-7e7596416050'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:6bcb40c3-237e-451a-ada8-b0e09ad031e4'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
  </uml:Class>
 </xmi:XMI>

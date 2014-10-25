@@ -6,7 +6,7 @@
    isDerived='false'
    isFinalSpecialization='false'
    isLeaf='false'
-   name='Association14'
+   name='se déroule'
    visibility='public'>
   <memberEnd href='urn:uuid:26f04144-2dc4-4d91-b4b6-157be90f4243'/>
   <memberEnd href='urn:uuid:68e388cf-5ed4-41d7-b6c5-3ca62aed8b10'/>
@@ -20,7 +20,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endPartie'
+    name=''
     aggregation='none'>
    <association href='urn:uuid:befd4124-417b-426d-b002-be852f65e578'/>
    <type href='urn:uuid:24f02c1a-a60f-4314-bda3-9c2cfd42d5c4'/>
@@ -40,7 +40,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endSouterrain'
+    name='Souterrain'
     aggregation='none'>
    <association href='urn:uuid:befd4124-417b-426d-b002-be852f65e578'/>
    <type href='urn:uuid:c556ad62-f21d-4fa8-a017-c8f930952f8f'/>

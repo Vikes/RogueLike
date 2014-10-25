@@ -6,7 +6,7 @@
    isDerived='false'
    isFinalSpecialization='false'
    isLeaf='false'
-   name='Association15'
+   name='affichePartie'
    visibility='public'>
   <memberEnd href='urn:uuid:1faaf5a6-4482-4e77-9727-3fa60645ae12'/>
   <memberEnd href='urn:uuid:52393a67-0020-439d-9753-400af5b23823'/>
@@ -20,7 +20,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endFrame'
+    name=''
     aggregation='none'>
    <association href='urn:uuid:39c9fd29-539c-4698-a562-fbe5d12d0a85'/>
    <type href='urn:uuid:5e664f7e-a4af-4d25-84f6-b075e5a2abd9'/>
@@ -40,7 +40,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endPartie'
+    name='Partie'
     aggregation='none'>
    <association href='urn:uuid:39c9fd29-539c-4698-a562-fbe5d12d0a85'/>
    <type href='urn:uuid:24f02c1a-a60f-4314-bda3-9c2cfd42d5c4'/>

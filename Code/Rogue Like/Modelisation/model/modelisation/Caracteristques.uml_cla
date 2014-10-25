@@ -95,7 +95,7 @@
     isStatic='false'
     name='getCaracteristique'
     concurrency='sequential'
-    visibility='package'>
+    visibility='private'>
    <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:8ce22b00-31e1-43a5-9277-3885b916bd02'
      isException='false'
      isOrdered='false'

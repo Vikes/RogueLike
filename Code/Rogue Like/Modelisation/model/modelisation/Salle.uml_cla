@@ -21,7 +21,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='tailleSalle'
+    name='longueur'
     aggregation='none'
     visibility='private'>
    <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
@@ -52,6 +52,26 @@
      value='1'
      visibility='public'/>
   </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:ac0cfb6d-7c3e-48e9-adaa-d21c526d27df'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='largeur'
+    aggregation='none'
+    visibility='private'>
+   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:f230698a-92e5-40fb-b082-fa5edfcdfffd'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:ca4cfc9d-e7dd-480f-ad10-bcf656923e38'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:a556d118-5ac2-4b3f-b3ed-e879c50977fd'
     isAbstract='false'
     isLeaf='false'
@@ -59,7 +79,16 @@
     isStatic='false'
     name='getMonstres'
     concurrency='sequential'
-    visibility='public'/>
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:fedc94f0-4dd8-4546-ace6-3d570f5800cd'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   </ownedParameter>
+  </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:7cf0a3e4-967d-43ad-bb4c-1450782c9597'
     isAbstract='false'
     isLeaf='false'
@@ -67,14 +96,15 @@
     isStatic='false'
     name='getOr'
     concurrency='sequential'
-    visibility='public'/>
-  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:6db1af51-8447-4d8e-a113-948c4ed5f11a'
-    isAbstract='false'
-    isLeaf='false'
-    isQuery='false'
-    isStatic='false'
-    name='getNbrPiece : Integer'
-    concurrency='sequential'
-    visibility='public'/>
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:da4d3497-3e76-412e-b9ec-235057e2d4bd'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
+   </ownedParameter>
+  </ownedOperation>
  </uml:Class>
 </xmi:XMI>

@@ -6,11 +6,11 @@
    isDerived='false'
    isFinalSpecialization='false'
    isLeaf='false'
-   name='Association11'
+   name='afficheCaractéristiques'
    visibility='public'>
   <memberEnd href='urn:uuid:c73c8cea-ea01-47d4-8138-e470cfb77bb9'/>
   <memberEnd href='urn:uuid:62a10325-b7b3-4be3-9bb3-2c4f1122610a'/>
-  <navigableOwnedEnd href='urn:uuid:62a10325-b7b3-4be3-9bb3-2c4f1122610a'/>
+  <navigableOwnedEnd href='urn:uuid:c73c8cea-ea01-47d4-8138-e470cfb77bb9'/>
   <ownedEnd xmi:type='uml:Property' xmi:uuid='urn:uuid:c73c8cea-ea01-47d4-8138-e470cfb77bb9'
     isDerived='false'
     isDerivedUnion='false'
@@ -20,7 +20,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endCaracteristques'
+    name='Caracteristques'
     aggregation='none'>
    <association href='urn:uuid:8043764a-22a3-4fad-9e3b-71b1beeccc80'/>
    <type href='urn:uuid:80aa6137-b497-44bc-adca-26e779e3f84d'/>
@@ -40,7 +40,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endFrame'
+    name=''
     aggregation='none'>
    <association href='urn:uuid:8043764a-22a3-4fad-9e3b-71b1beeccc80'/>
    <type href='urn:uuid:5e664f7e-a4af-4d25-84f6-b075e5a2abd9'/>

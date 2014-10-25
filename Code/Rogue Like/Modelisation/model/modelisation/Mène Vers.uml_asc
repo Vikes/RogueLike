@@ -6,7 +6,7 @@
    isDerived='false'
    isFinalSpecialization='false'
    isLeaf='false'
-   name='Association6'
+   name='Mène Vers'
    visibility='public'>
   <memberEnd href='urn:uuid:86b454e7-f959-433f-bd8c-6926170fb86f'/>
   <memberEnd href='urn:uuid:73fb71c0-b7ce-4846-b745-fcbeb08f2b83'/>
@@ -20,7 +20,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endEscalier'
+    name=''
     aggregation='none'>
    <association href='urn:uuid:851949c8-e301-4221-a210-a4c77a910515'/>
    <type href='urn:uuid:ddae9591-a8ae-41f4-9a0e-a82ddfe686c4'/>
@@ -40,7 +40,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endSalle'
+    name='Salle'
     aggregation='none'>
    <association href='urn:uuid:851949c8-e301-4221-a210-a4c77a910515'/>
    <type href='urn:uuid:29f3768f-04fc-4412-a6de-c200b42c469b'/>

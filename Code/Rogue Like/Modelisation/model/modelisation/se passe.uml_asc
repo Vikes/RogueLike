@@ -20,7 +20,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endPartie'
+    name=''
     aggregation='none'>
    <association href='urn:uuid:7b2ac651-1d2a-4dfc-b81e-4656c649daf8'/>
    <type href='urn:uuid:24f02c1a-a60f-4314-bda3-9c2cfd42d5c4'/>
@@ -40,7 +40,7 @@
     isReadOnly='false'
     isStatic='false'
     isUnique='true'
-    name='endSalle'
+    name='salleActu'
     aggregation='none'>
    <association href='urn:uuid:7b2ac651-1d2a-4dfc-b81e-4656c649daf8'/>
    <type href='urn:uuid:29f3768f-04fc-4412-a6de-c200b42c469b'/>

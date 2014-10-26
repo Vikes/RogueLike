@@ -14,6 +14,21 @@
     isStatic='false'
     name='generer'
     concurrency='sequential'
-    visibility='public'/>
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:7dc319e9-b42e-4b51-893a-7f4e56681164'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:29f3768f-04fc-4412-a6de-c200b42c469b'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:22aa5798-0115-4bb1-8efe-32e90f8636b3'
+      value='0'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:dffe4cf8-075a-4b80-9e9a-26585f414699'
+      value='*'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
  </uml:Interface>
 </xmi:XMI>

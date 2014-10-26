@@ -10,28 +10,8 @@
    visibility='public'>
   <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:9c6d1c29-7b61-4fbf-91a1-ac36a8a525ee'
     isSubstitutable='true'>
-   <general href='urn:uuid:07ee4e32-ecb4-4245-98de-f687f0563b03'/>
+   <general href='urn:uuid:6b338e2a-ef63-4eaf-bb56-d3d9af03e73c'/>
   </generalization>
-  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:4bcd87ab-2bb6-4d19-afba-b7aca60d1cca'
-    isDerived='false'
-    isDerivedUnion='false'
-    isID='false'
-    isLeaf='false'
-    isOrdered='false'
-    isReadOnly='false'
-    isStatic='false'
-    isUnique='true'
-    name='vieMonstre'
-    aggregation='none'
-    visibility='private'>
-   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
-   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:10ae462b-bb01-48af-8bbe-9b5f0b3e96cb'
-     value='1'
-     visibility='public'/>
-   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:6ca74807-5157-402e-bad8-1dda5cabf914'
-     value='1'
-     visibility='public'/>
-  </ownedAttribute>
   <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:a4456c9c-480f-46f4-9a95-67607bc484b4'
     isDerived='false'
     isDerivedUnion='false'

@@ -26,5 +26,23 @@
     <type href='urn:uuid:29f3768f-04fc-4412-a6de-c200b42c469b'/>
    </ownedParameter>
   </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:e20c232c-15ee-4683-a88c-9bc1b64a5abb'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='supprimerSalle'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:f0326a3e-630c-42cd-a3f3-b968b12392d7'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='Salle'
+     direction='in'>
+    <type href='urn:uuid:29f3768f-04fc-4412-a6de-c200b42c469b'/>
+   </ownedParameter>
+  </ownedOperation>
  </uml:Class>
 </xmi:XMI>

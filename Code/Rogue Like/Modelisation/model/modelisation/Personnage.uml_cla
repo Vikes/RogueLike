@@ -68,26 +68,6 @@
      value='1'
      visibility='public'/>
   </ownedAttribute>
-  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:4facaa08-fa06-47aa-ade2-a209a912f6c0'
-    isDerived='false'
-    isDerivedUnion='false'
-    isID='false'
-    isLeaf='false'
-    isOrdered='false'
-    isReadOnly='false'
-    isStatic='false'
-    isUnique='true'
-    name='viePersonnage'
-    aggregation='none'
-    visibility='private'>
-   <type href='http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer'/>
-   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:0347ce2c-1ee7-45b8-970c-df3d64e9c408'
-     value='1'
-     visibility='public'/>
-   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:ba7b8ff4-4448-46e4-a0d3-d37923d7de44'
-     value='1'
-     visibility='public'/>
-  </ownedAttribute>
   <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:4ba65082-7323-4cc9-89b2-3876dfaed772'
     isDerived='false'
     isDerivedUnion='false'

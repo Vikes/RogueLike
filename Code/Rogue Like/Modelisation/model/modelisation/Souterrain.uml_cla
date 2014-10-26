@@ -7,5 +7,23 @@
    isFinalSpecialization='false'
    isLeaf='false'
    name='Souterrain'
-   visibility='public'/>
+   visibility='public'>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:3f61cf0d-6913-4580-81a1-5954560f3f86'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='true'
+    name='getInstance'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:bcac0fb7-19ce-4800-a9cc-6b7a622cbbb3'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:c556ad62-f21d-4fa8-a017-c8f930952f8f'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
 </xmi:XMI>

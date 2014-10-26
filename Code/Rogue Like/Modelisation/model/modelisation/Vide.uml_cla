@@ -7,5 +7,10 @@
    isFinalSpecialization='false'
    isLeaf='false'
    name='Vide'
-   visibility='public'/>
+   visibility='public'>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:4f575c19-c7b6-4dfc-9e93-c599e1d74a50'
+    isSubstitutable='true'>
+   <general href='urn:uuid:6b338e2a-ef63-4eaf-bb56-d3d9af03e73c'/>
+  </generalization>
+ </uml:Class>
 </xmi:XMI>

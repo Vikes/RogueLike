@@ -84,5 +84,30 @@
     name='Mouvement'
     concurrency='sequential'
     visibility='private'/>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:f60b3347-985e-4523-9d38-971c8fc7979f'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='true'
+    name='getInstance'
+    concurrency='sequential'
+    visibility='private'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:46924c9d-586f-483b-bf53-38b46ddd4cd3'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:24f02c1a-a60f-4314-bda3-9c2cfd42d5c4'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:e697e82c-2bab-49b8-8acd-88cf25b36e64'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='commencerPartie'
+    concurrency='sequential'
+    visibility='private'/>
  </uml:Class>
 </xmi:XMI>

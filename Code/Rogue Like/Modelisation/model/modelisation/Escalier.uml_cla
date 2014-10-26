@@ -33,11 +33,11 @@
      visibility='public'/>
   </ownedAttribute>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:cf02754a-9b19-44ec-b0e2-eaeb6c533ac2'
-    isAbstract='false'
+    isAbstract='true'
     isLeaf='false'
     isQuery='false'
     isStatic='false'
-    name='getMontres'
+    name='getMonstres'
     concurrency='sequential'
     visibility='public'>
    <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:9bfab47e-72ad-443c-a7b6-4d64184f14a1'
@@ -50,7 +50,7 @@
    </ownedParameter>
   </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:070f7530-87a1-454a-9ed4-95f8b4653c29'
-    isAbstract='false'
+    isAbstract='true'
     isLeaf='false'
     isQuery='false'
     isStatic='false'

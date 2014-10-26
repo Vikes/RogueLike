@@ -10,7 +10,7 @@
    visibility='public'>
   <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:a8427683-a900-4441-a72f-f11ddadc368c'
     isSubstitutable='true'>
-   <general href='urn:uuid:07ee4e32-ecb4-4245-98de-f687f0563b03'/>
+   <general href='urn:uuid:6b338e2a-ef63-4eaf-bb56-d3d9af03e73c'/>
   </generalization>
  </uml:Class>
 </xmi:XMI>

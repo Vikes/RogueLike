@@ -29,4 +29,16 @@ public class Monstre extends Element {
     public Boolean getEnVie() {
         return enVie;
     }
+
+    @Override
+    public Element getElement() {
+        Element res=this;
+        return res ;
+    }
+
+    @Override
+    public String getType() {
+        String res = "Monstre";
+        return res;
+    }
 }

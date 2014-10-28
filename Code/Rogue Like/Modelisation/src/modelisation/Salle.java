@@ -5,28 +5,54 @@ import java.util.Collection;
 public class Salle {
    
     private int largeur;
-
     private int niveau;
-
     private int longueur;
-    public  Salle Salle(int largeur ,int longueur, int  niveau) {
+    Case  lstCase[];
+    Escalier endEscalier;
+
+    /**
+     * @param largeur
+     * @param longueur
+     * @param niveau
+     * @return
+     */
+    public  Salle(int largeur ,int longueur, int  niveau) {
         this.largeur = largeur;
         this.longueur = longueur;
-        this.niveau = niveau;        
+        this.niveau = niveau; 
+        
     }
 
     /**
      * @associates <{modelisation.Case}>
      */
-    Collection lstCase;
-    Escalier endEscalier;
+    
 
     public int getMonstres() {
-     
+        int res=0;
+        
+        for ( Case c : lstCase) {
+            if(c.Element.getType()== "Monstre" ){
+                res+=1;
+            }
+        }
+         return res;
+              
     }
 
-    public int getOr() {
-    
+    public int getOr() {        
+        int res=0;
+        
+        
+        for ( Case c : lstCase) {
+            if(c.Element.getType()== "Monstre" ){
+                res+=c.Element.getElement().getArgentMonstre();
+            }
+            else if (c.Element.getType()=="Trésor") {
+                res+=c.Element.getElement().getArgentTresor();
+            }
+        }
+         return res;
     }
 
     public void setNiveau(int niveau) {

@@ -13,4 +13,13 @@ public class Potion extends Element {
     public int getBonus() {
         return bonus;
     }
+    @Override
+    public Element getElement() {
+        return this;
+    }
+    @Override
+    public String getType() {
+        String res = "Potion";
+        return res;
+    }
 }

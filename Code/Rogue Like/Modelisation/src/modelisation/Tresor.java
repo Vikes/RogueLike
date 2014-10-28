@@ -13,4 +13,13 @@ public class Tresor extends Element {
     public int getArgentTresor() {
         return argentTresor;
     }
+    @Override
+    public Element getElement() {
+        return this;
+    }
+    @Override
+    public String getType() {
+        String res = "Trésor";
+        return res;
+    }
 }

@@ -1,17 +1,21 @@
-package modelisation;
+package metier;
 
 import java.util.Collection;
 
 public class Salle {
    
-    private int largeur;
     private int niveau;
     private int longueur;
-    Case  lstCase[];
+    Case  lstCase[][];
     Escalier endEscalier;
 
-    public  Salle(int largeur ,int longueur, int  niveau) {
-        this.largeur = largeur;
+    /**
+     * @param largeur
+     * @param longueur
+     * @param niveau
+     * @return
+     */
+    public  Salle(int longueur, int  niveau) {
         this.longueur = longueur;
         this.niveau = niveau; 
         
@@ -40,10 +44,12 @@ public class Salle {
         
         for ( Case c : lstCase) {
             if(c.Element.getType()== "Monstre" ){
-                res+=c.Element.getElement().getArgentMonstre();
+                Monstre m = (Monstre) c.Element.getElement();
+                res+=m.getArgentMonstre();
             }
             else if (c.Element.getType()=="Trésor") {
-                res+=c.Element.getElement().getArgentTresor();
+                Tresor t = (Tresor) c.Element.getElement();
+                res+=t.getArgentTresor();
             }
         }
          return res;
@@ -55,5 +61,14 @@ public class Salle {
 
     public int getNiveau() {
         return niveau;
+    }
+
+
+    public void setLstCase(Case[][] lstCase) {
+        this.lstCase = lstCase;
+    }
+
+    public Case[][] getLstCase() {
+        return lstCase;
     }
 }

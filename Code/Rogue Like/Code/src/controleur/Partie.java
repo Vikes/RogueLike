@@ -13,7 +13,7 @@ public class Partie {
     private static int argentMax;
     Souterrain Souterrain;
     Salle salleActu;
-    Collection Instance;
+    static Partie Instance;
     Personnage Personnage;
 
 
@@ -57,14 +57,6 @@ public class Partie {
         return salleActu;
     }
 
-    public void setInstance(Collection Instance) {
-        this.Instance = Instance;
-    }
-
-    public Collection getInstance1() {
-        return Instance;
-    }
-
     public void setPersonnage(Personnage Personnage) {
         this.Personnage = Personnage;
     }
@@ -74,14 +66,21 @@ public class Partie {
     }
 
     public static Partie getInstance() {
+        if (Instance == null)
+             {       Instance = new Partie();     
+             }
+        return Instance;
     }
-
+   
     public void commencerPartie() {
+        
     }
 
     public void Combat() {
+        
     }
 
     public void Mouvement() {
+        
     }
 }

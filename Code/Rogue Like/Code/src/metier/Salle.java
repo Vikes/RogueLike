@@ -51,10 +51,8 @@ public class Salle {
         for (i = 0; i < lstCase.length; i++) {
             for (j = 0; j < lstCase[i].length; j++) {
                 Case c = lstCase[i][j];
-                if (c.Element.getType() == "Monstre") {
-                    Monstre m = (Monstre) c.Element.getElement();
-                    res += m.getArgentMonstre();
-                } else if (c.Element.getType() == "Trésor") {
+                
+                 if (c.Element.getType() == "Trésor") {
                     Tresor t = (Tresor) c.Element.getElement();
                     res += t.getArgentTresor();
                 }
@@ -63,20 +61,15 @@ public class Salle {
 
         return res;
     }
-
     public void setNiveau(int niveau) {
         this.niveau = niveau;
     }
-
     public int getNiveau() {
         return niveau;
     }
-
-
     public void setLstCase(Case[][] lstCase) {
         this.lstCase = lstCase;
     }
-
     public Case[][] getLstCase() {
         return lstCase;
     }

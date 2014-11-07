@@ -5,11 +5,8 @@ import controleur.Partie;
 public class Caracteristques {
     
     private int force;
-
     private int nbEnnemis;
-
     private int gold;
-
     private int niveauAct;
 
     private int[] getCaracteristique() {

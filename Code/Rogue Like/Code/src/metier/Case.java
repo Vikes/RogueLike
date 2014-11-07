@@ -3,11 +3,8 @@ package metier;
 public class Case {
    
     private int positionX;
-
     private String symbole;
-
     private int positionY;
-
     private Boolean vue = false;
     Element Element;
 

@@ -13,9 +13,9 @@ public class Caracteristques {
     private int[] getCaracteristique() {
         int [] carac = new int[4];
         carac[0]=Partie.getInstance().Personnage.getForcePersonnage();
-        carac[1]=Partie.getInstance().Salle.getMonstres();
+        carac[1]=Partie.getInstance().salleActu.getMonstres();
         carac[2]=Partie.getInstance().Personnage.getArgentPersonnage();
-        carac[3]=Partie.getInstance().Salle.getNiveau();
+        carac[3]=Partie.getInstance().salleActu.getNiveau();
         
         return carac;
     }

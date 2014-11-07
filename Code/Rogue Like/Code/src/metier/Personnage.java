@@ -1,27 +1,19 @@
 package metier;
 
 public class Personnage {
-    /**
-     * @attribute
-     */
+   
     private int argentPersonnage;
-
-    /**
-     * @attribute
-     */
     private Boolean enVie;
-
-    /**
-     * @attribute
-     */
     private int forcePersonnage;
-
-    /**
-     * @attribute
-     */
     private String nomPersonnage;
     Case Case;
-
+    
+    public Personnage(int argent,int force,String nom) {
+        this.argentPersonnage=argent;
+        this.forcePersonnage=force;
+        this.nomPersonnage=nom;
+        this.enVie=true;
+    }
     public void setArgentPersonnage(int argentPersonnage) {
         this.argentPersonnage = argentPersonnage;
     }

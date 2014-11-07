@@ -26,7 +26,7 @@ public class Partie {
     Collection Instance;
     Personnage Personnage;
 
-    private static Partie getInstance() {
+    static protected Partie getInstance() {
     }
 
     private void commencerPartie() {

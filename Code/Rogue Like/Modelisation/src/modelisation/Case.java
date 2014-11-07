@@ -11,6 +11,7 @@ public class Case {
     private Boolean vue;
     Element Element;
 
+   
     public void setPositionX(int positionX) {
         this.positionX = positionX;
     }
@@ -20,12 +21,30 @@ public class Case {
     }
 
     public void setSymbole(String symbole) {
-        this.symbole = symbole;
+        if(this.Element.getType()=="Potion") {
+             this.symbole = "p";
+        }
+        else if (this.Element.getType()=="Trésor")
+        { 
+            this.symbole = "$";          
+        }
+        else if (this.Element.getType()=="Sortie") {
+            this.symbole = "O"; 
+        }
+        else if (this.Element.getType()=="Escalier") {
+            this.symbole = "O"; 
+        }
+        else
+        {
+            this.symbole=symbole;
+        }       
+       
     }
 
     public String getSymbole() {
         return symbole;
     }
+    
 
     public void setPositionY(int positionY) {
         this.positionY = positionY;

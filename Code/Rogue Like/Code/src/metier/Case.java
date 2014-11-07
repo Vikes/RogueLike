@@ -49,8 +49,6 @@ public class Case {
     public Boolean getVue() {
         return vue;
     }
-
-
     public void setElement(Element Element) {
         this.Element = Element;
     }

@@ -7,7 +7,7 @@ public class Escalier extends Case {
 
 
     public Escalier(boolean desc, Salle Salle) {
-        super();
+        
         this.desc = desc;
         this.Salle = Salle;
     }
@@ -29,7 +29,7 @@ public class Escalier extends Case {
     }
 
     public int getOr() {
-        
+       
     }
 
     public int getMonstres(){

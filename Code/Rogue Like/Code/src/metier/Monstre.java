@@ -5,6 +5,12 @@ public class Monstre extends Element {
     private int forceMonstre;
     private int argentMonstre;
     private Boolean enVie;
+    
+    public Monstre(int force,int argent) {
+        this.forceMonstre=force;
+        this.argentMonstre=argent;
+        this.enVie=true;
+    }
 
     public void setForceMonstre(int forceMonstre) {
         this.forceMonstre = forceMonstre;

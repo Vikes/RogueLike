@@ -45,4 +45,12 @@ public class Personnage {
     public String getNomPersonnage() {
         return nomPersonnage;
     }
+
+    public void setCase(Case Case) {
+        this.Case = Case;
+    }
+
+    public Case getCase() {
+        return this.Case;
+    }
 }

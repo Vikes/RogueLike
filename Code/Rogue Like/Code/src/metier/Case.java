@@ -25,7 +25,7 @@ public class Case {
     }
 
     public void setSymbole(String symbole) {
-        this.symbole = symbole;
+        this.symbole = ".";
     }
 
     public String getSymbole() {

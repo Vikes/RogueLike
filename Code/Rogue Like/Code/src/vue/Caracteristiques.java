@@ -2,14 +2,36 @@ package vue;
 
 import controleur.Partie;
 
-public class Caracteristques {
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Caracteristiques extends JPanel {
     
     private int force;
     private int nbEnnemis;
     private int gold;
     private int niveauAct;
+    private JLabel lblForce=new JLabel("Force :"+this.getForce());
+    private JLabel lblNiveau=new JLabel("Vous êtes au niveau :"+this.getNiveauAct());
+    private JLabel lblGold=new JLabel("Vous avec  :"+this.getGold()+" pièces d'or");
+    private JLabel lblNbEnnemis=new JLabel("Il reste :"+this.getNbEnnemis()+" dans la salle");
+    
 
-    private int[] getCaracteristique() {
+    public Caracteristiques(){
+        
+       super(new GridLayout (1,4,1,5));
+       
+        int carac[]=getCaracteristique();
+        this.add(lblForce);
+        this.add(lblGold);
+        this.add(lblNiveau);
+        this.add(lblNbEnnemis);
+        
+    }
+    public int[] getCaracteristique() {
         int [] carac = new int[4];
         carac[0] = Partie.getInstance().getPersonnage().getForcePersonnage();
         carac[1] = Partie.getInstance().getSalleActu().getMonstres();

@@ -1,4 +1,10 @@
 package vue;
 
-public class Option {
+import javax.swing.JPanel;
+
+public class Option extends JPanel {
+    
+    public Option(){
+        
+    }
 }

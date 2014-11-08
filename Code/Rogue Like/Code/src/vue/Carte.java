@@ -1,11 +1,21 @@
 package vue;
 
-import java.util.Collection;
+import java.awt.GridLayout;
 
-public class Carte {
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+public class  Carte  extends JPanel {
     /**
      * @attribute
      * @associates <{String}>
      */
-    private Collection carte;
+    //private String[] carte;
+    public  Carte() {
+        super(new GridLayout (400,300,1,1)); 
+        
+    }
+    
 }

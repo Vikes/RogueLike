@@ -7,7 +7,7 @@ import metier.Salle;
 import metier.Souterrain;
 
 public class Partie {
- 
+
     private String touche;
     private Boolean finie;
     private static int argentMax;
@@ -16,6 +16,7 @@ public class Partie {
     static Partie Instance;
     Personnage Personnage;
 
+    
 
     public void setTouche(String touche) {
         this.touche = touche;
@@ -66,21 +67,21 @@ public class Partie {
     }
 
     public static Partie getInstance() {
-        if (Instance == null)
-             {       Instance = new Partie();     
-             }
+        if (Instance == null) {
+            Instance = new Partie();
+        }
         return Instance;
     }
-   
+
     public void commencerPartie() {
         
     }
 
     public void Combat() {
-        
+
     }
 
     public void Mouvement() {
-        
+
     }
 }

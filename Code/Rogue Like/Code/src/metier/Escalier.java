@@ -5,11 +5,14 @@ public class Escalier extends Case {
     private boolean desc;
     Salle Salle;
     
-
-    public Escalier(boolean desc, Salle Salle) {
-        
+   
+    public Escalier(int posx, int posy ,boolean desc, Salle Salle) {
+        super(posx,posy);
         this.desc = desc;
         this.Salle = Salle;
+    }
+    public Escalier (int posx,int posy) {
+        super(posx,posy);        
     }
 
     public void setDesc(boolean desc) {

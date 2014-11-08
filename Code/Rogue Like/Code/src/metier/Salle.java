@@ -1,12 +1,14 @@
 package metier;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Collection;
 
 public class Salle {
 
     private int niveau;
     private int longueur;
-    Case lstCase[][];
+    List<Case> lstCase;
     Escalier endEscalier;
 
     /**
@@ -18,6 +20,7 @@ public class Salle {
     public Salle(int longueur, int niveau) {
         this.longueur = longueur;
         this.niveau = niveau;
+        lstCase = new ArrayList<Case>();
     }
 
     /**
@@ -28,15 +31,10 @@ public class Salle {
     public int getMonstres() {
         int res = 0;
         int i;
-        int j;
-        for (i = 0; i < lstCase.length; i++) {
-            for (j = 0; j < lstCase[i].length; j++) {
-                Case c = lstCase[i][j];
+        for (Case c : lstCase) {
                 if (c.Element.getType() == "Monstre") {
                     res += 1;
                 }
-            }
-
         }
         return res;
 
@@ -45,18 +43,11 @@ public class Salle {
     public int getOr() {
         int res = 0;
         int i = 0;
-        int j = 0;
-
-
-        for (i = 0; i < lstCase.length; i++) {
-            for (j = 0; j < lstCase[i].length; j++) {
-                Case c = lstCase[i][j];
-                
+        for (Case c : lstCase) {
                  if (c.Element.getType() == "Trésor") {
                     Tresor t = (Tresor) c.Element.getElement();
                     res += t.getArgentTresor();
                 }
-            }
         }
 
         return res;
@@ -67,10 +58,27 @@ public class Salle {
     public int getNiveau() {
         return niveau;
     }
-    public void setLstCase(Case[][] lstCase) {
+
+    public void setLongueur(int longueur) {
+        this.longueur = longueur;
+    }
+
+    public int getLongueur() {
+        return longueur;
+    }
+
+    public void setEndEscalier(Escalier endEscalier) {
+        this.endEscalier = endEscalier;
+    }
+
+    public Escalier getEndEscalier() {
+        return endEscalier;
+    }
+
+    public void setLstCase(List<Case> lstCase) {
         this.lstCase = lstCase;
     }
-    public Case[][] getLstCase() {
+    public List<Case> getLstCase() {
         return lstCase;
     }
 }

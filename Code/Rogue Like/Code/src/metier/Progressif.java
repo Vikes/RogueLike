@@ -1,4 +1,6 @@
 package metier;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Progressif implements Generation {
     
@@ -11,7 +13,7 @@ public class Progressif implements Generation {
     private Double probPotGen;
     private int minPot; 
     private int maxPot;
-    private Double probMonsterGen=0.;
+    private Double probMonsterGen=0.1;
     private int minOrMonstre;
     private int minForceMonstre;
     private int maxOrMonstre;
@@ -148,23 +150,24 @@ public class Progressif implements Generation {
         return probCaseVideGen;
     }
     
-    public Case[][] genererSalle(int pronf) {
+    public void genererSalle(Souterrain souterrain,int pronf) {
         int taille = (int)(Math.random() * (15-10))+10;
+        Salle s = new Salle(taille,pronf);
         int nbescaliers = 0;
-        Case salle[][] = new Case[taille][taille];
+        List<Case> salle = s.getLstCase();
         int i,j;
         for(i=0;i<taille;i++) {
             for(j=0;j<taille;j++) {
                 Case c = new Case(i,j);
                 double elem = Math.random();
                 //génération escalier
-                if(elem<=this.getProbEscalierGen()) {
+                if(elem<=this.getProbEscalierGen()&&pronf!=0) {
                     if(nbescaliers<this.getEscalierMax()) {
                         int tailleSalle = (int)(Math.random() * (15-10))+10;
                         Salle salleSuiv = new Salle(tailleSalle,pronf+1);
-                        Escalier e = new Escalier(false,salleSuiv);
-                        salleSuiv.setLstCase(genererSalle(pronf+1));
-                        salle[i][j] = e;
+                        Escalier e = new Escalier(i,j,false,salleSuiv);
+                        genererSalle(souterrain,pronf-1);
+                        salle.add(e);
                     }
                 }
                 //génération coffre
@@ -174,7 +177,7 @@ public class Progressif implements Generation {
                     int contenu= (int)(Math.random() * (max-min)+min);
                     Tresor t = new Tresor(contenu);
                     c.setElement(t);
-                    salle[i][j]=c;
+                    salle.add(c);
                 }
                 //génération potion
                 else if(elem<=(this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen())) {
@@ -183,7 +186,7 @@ public class Progressif implements Generation {
                     int valeur= (int)(Math.random() * (max-min)+min);
                     Potion p = new Potion(valeur);
                     c.setElement(p);
-                    salle[i][j]=c;
+                    salle.add(c);
                 }
                 //génération monstre
                 else if(elem<=this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()+(this.getProbMonsterGen()*(pronf/this.getProfMax())))
@@ -192,15 +195,35 @@ public class Progressif implements Generation {
                     double minForce = this.getMinForceMonstre()*1.25*(this.getProfMax()+1-pronf);
                     int maxOr = this.getMaxOrMonstre()*2*(this.getProfMax()+1-pronf);
                     int minOr = this.getMinOrMonstre()*2*(this.getProfMax()+1-pronf);
+                    Monstre m = new Monstre((int)(Math.random() * (maxForce-minForce)+minForce),(int)(Math.random() * (maxOr-minOr)+minOr));
                 }
                 else {
-                    salle[i][j]=c;
+                    salle.add(c);
                 }
             }
         }
-        return salle;
+        souterrain.getLstSalle().add(s);
     }
     
+    public static void main(String[] args) {
+        Souterrain s = new Souterrain(new Progressif(1,0.5,2,0.2,0.2));
+        Progressif p = (Progressif) s.getGeneration();
+        p.genererSalle(s,1);
+        List<Salle> lst = s.getLstSalle();
+        Salle salle = lst.get(0);
+        System.out.println("Taille de la salle : "+salle.getLongueur());
+        int ligneactuelle = 0;
+        Case caseactuelle;
+        for(int i = 0;i<salle.getLstCase().size();i++) {
+            caseactuelle = salle.getLstCase().get(i);
+            if(caseactuelle.getPositionX()!=ligneactuelle) {
+                ligneactuelle=caseactuelle.getPositionX();
+                System.out.println("");
+            }
+            System.out.print(caseactuelle.getSymbole());
+        }
+        
+    }
     /*public Salle[] genererSouterrain(){
         
     }*/

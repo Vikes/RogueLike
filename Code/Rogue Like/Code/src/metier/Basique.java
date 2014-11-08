@@ -18,11 +18,11 @@ public class Basique implements Generation {
     private int maxForceMonstre;
     private Double probCaseVideGen;
     
-    public Case[] genererSalle() {
+    public void genererSalle(Souterrain souterrain,int pronf){
         
     }
     
-    public Salle[] genererSouterrain(){
+    /*public Salle[] genererSouterrain(){
         
-    }
+    }*/
 }

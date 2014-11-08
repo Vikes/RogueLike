@@ -5,7 +5,7 @@ public class Case {
     private int positionX;
     private String symbole;
     private int positionY;
-    private Boolean vue = false;
+    private Boolean vue;
     Element Element;
 
 
@@ -13,6 +13,7 @@ public class Case {
         super();
         this.positionX = positionX;
         this.positionY = positionY;
+        vue = false;
     }
 
     public void setPositionX(int positionX) {

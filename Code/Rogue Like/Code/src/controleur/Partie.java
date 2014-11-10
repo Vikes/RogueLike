@@ -3,6 +3,7 @@ package controleur;
 import java.util.Collection;
 
 import metier.Personnage;
+import metier.Progressif;
 import metier.Salle;
 import metier.Souterrain;
 
@@ -16,7 +17,14 @@ public class Partie {
     static Partie Instance;
     Personnage Personnage;
 
-    
+    public Partie(){
+        this.finie = false;
+        this.Souterrain = new Souterrain(new Progressif(5,0.1,3,0.05,0.05));
+        this.Souterrain.getGeneration().genererSouterrain(this.Souterrain);
+        this.Personnage = new Personnage("Narkrai");
+        System.out.println("Taille de la liste : "+ (this.getSouterrain().getLstSalle().size()-1));
+        salleActu = this.getSouterrain().getLstSalle().get(this.getSouterrain().getLstSalle().size()-1);
+    }
 
     public void setTouche(String touche) {
         this.touche = touche;

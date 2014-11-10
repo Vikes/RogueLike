@@ -323,7 +323,7 @@ public class Progressif implements Generation {
         }
     
 
-        public static void main(String[] args) {
+        /*public static void main(String[] args) {
         Souterrain s = new Souterrain(new Progressif(10,0.1,6,0.01,0.01));
         Progressif p = (Progressif) s.getGeneration();
         p.genererSouterrain(s);
@@ -345,5 +345,5 @@ public class Progressif implements Generation {
             System.out.println("");
         }
         
-    }
+    }*/
 }

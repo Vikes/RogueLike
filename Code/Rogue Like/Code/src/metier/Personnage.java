@@ -8,9 +8,9 @@ public class Personnage {
     private String nomPersonnage;
     Case Case;
     
-    public Personnage(int argent,int force,String nom) {
-        this.argentPersonnage=argent;
-        this.forcePersonnage=force;
+    public Personnage(String nom) {
+        this.argentPersonnage=0;
+        this.forcePersonnage=1;
         this.nomPersonnage=nom;
         this.enVie=true;
     }

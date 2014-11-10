@@ -32,7 +32,7 @@ public class Salle {
         int res = 0;
         int i;
         for (Case c : lstCase) {
-                if (c.Element.getType() == "Monstre") {
+                if (c.getElement()!=null && c.getElement().getType() == "Monstre") {
                     res += 1;
                 }
         }
@@ -44,7 +44,7 @@ public class Salle {
         int res = 0;
         int i = 0;
         for (Case c : lstCase) {
-                 if (c.Element.getType() == "Trésor") {
+                 if (c.getElement()!=null && c.Element.getType() == "Trésor") {
                     Tresor t = (Tresor) c.Element.getElement();
                     res += t.getArgentTresor();
                 }

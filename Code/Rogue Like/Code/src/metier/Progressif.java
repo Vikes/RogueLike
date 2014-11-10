@@ -13,7 +13,7 @@ public class Progressif implements Generation {
     private Double probPotGen;
     private int minPot; 
     private int maxPot;
-    private Double probMonsterGen=0.1;
+    private Double probMonsterGen=0.025;
     private int minOrMonstre;
     private int minForceMonstre;
     private int maxOrMonstre;
@@ -152,23 +152,29 @@ public class Progressif implements Generation {
     
     public void genererSalle(Souterrain souterrain,int pronf) {
         int taille = (int)(Math.random() * (15-10))+10;
-        Salle s = new Salle(taille,pronf);
         int nbescaliers = 0;
+        Salle s = new Salle(taille,pronf);
         List<Case> salle = s.getLstCase();
         int i,j;
+        System.out.println("Seuils : "+ this.getProbEscalierGen() + " " + (this.getProbEscalierGen()+this.getProbCoffreGen()) +" "+(this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()) + " " + (this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()+(this.getProbMonsterGen()*(1+(this.getProfMax()-pronf)/this.getProfMax()))));
         for(i=0;i<taille;i++) {
             for(j=0;j<taille;j++) {
                 Case c = new Case(i,j);
-                double elem = Math.random();
+                double elem = Math.random(); 
+                System.out.print("Case "+ i + " " + j + " " + elem + " ");
                 //génération escalier
                 if(elem<=this.getProbEscalierGen()&&pronf!=0) {
                     if(nbescaliers<this.getEscalierMax()) {
                         int tailleSalle = (int)(Math.random() * (15-10))+10;
                         Salle salleSuiv = new Salle(tailleSalle,pronf+1);
                         Escalier e = new Escalier(i,j,false,salleSuiv);
+                        System.out.println("Escalier");
+                        c = e;
                         genererSalle(souterrain,pronf-1);
-                        salle.add(e);
+                        nbescaliers++;
+                        this.setProbEscalierGen(this.getProbEscalierGen()/2);
                     }
+
                 }
                 //génération coffre
                 else if(elem<=(this.getProbEscalierGen()+this.getProbCoffreGen())) {
@@ -177,7 +183,7 @@ public class Progressif implements Generation {
                     int contenu= (int)(Math.random() * (max-min)+min);
                     Tresor t = new Tresor(contenu);
                     c.setElement(t);
-                    salle.add(c);
+                    System.out.println("Trésor");
                 }
                 //génération potion
                 else if(elem<=(this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen())) {
@@ -186,41 +192,48 @@ public class Progressif implements Generation {
                     int valeur= (int)(Math.random() * (max-min)+min);
                     Potion p = new Potion(valeur);
                     c.setElement(p);
-                    salle.add(c);
+                    System.out.println("Potion");
                 }
                 //génération monstre
-                else if(elem<=this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()+(this.getProbMonsterGen()*(pronf/this.getProfMax())))
+                else if(elem<=(this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()+(this.getProbMonsterGen()*(1+(this.getProfMax()-pronf)/this.getProfMax()))))
                 {
                     double maxForce = this.getMaxForceMonstre()*1.25*(this.getProfMax()+1-pronf);
                     double minForce = this.getMinForceMonstre()*1.25*(this.getProfMax()+1-pronf);
                     int maxOr = this.getMaxOrMonstre()*2*(this.getProfMax()+1-pronf);
                     int minOr = this.getMinOrMonstre()*2*(this.getProfMax()+1-pronf);
                     Monstre m = new Monstre((int)(Math.random() * (maxForce-minForce)+minForce),(int)(Math.random() * (maxOr-minOr)+minOr));
+                    c.setElement(m);
+                    System.out.println("Monstre");
                 }
                 else {
-                    salle.add(c);
+                    System.out.println("Vide");
                 }
+                salle.add(c);
             }
         }
         souterrain.getLstSalle().add(s);
     }
     
     public static void main(String[] args) {
-        Souterrain s = new Souterrain(new Progressif(1,0.5,2,0.2,0.2));
+        Souterrain s = new Souterrain(new Progressif(3,0.1,6,0.01,0.01));
         Progressif p = (Progressif) s.getGeneration();
-        p.genererSalle(s,1);
+        p.genererSalle(s,3);
         List<Salle> lst = s.getLstSalle();
-        Salle salle = lst.get(0);
-        System.out.println("Taille de la salle : "+salle.getLongueur());
         int ligneactuelle = 0;
         Case caseactuelle;
-        for(int i = 0;i<salle.getLstCase().size();i++) {
-            caseactuelle = salle.getLstCase().get(i);
-            if(caseactuelle.getPositionX()!=ligneactuelle) {
-                ligneactuelle=caseactuelle.getPositionX();
-                System.out.println("");
+        for(Salle st : lst)
+        {
+            System.out.println("Taille de la salle : "+st.getLongueur());
+            System.out.println("Profondeur de la salle :" + st.getNiveau());
+            for(int i = 0;i<st.getLstCase().size();i++) {
+                caseactuelle = st.getLstCase().get(i);
+                if(caseactuelle.getPositionX()!=ligneactuelle) {
+                    ligneactuelle=caseactuelle.getPositionX();
+                    System.out.println("");
+                }
+                System.out.print(caseactuelle.getSymbole()+ " ");
             }
-            System.out.print(caseactuelle.getSymbole());
+            System.out.println("");
         }
         
     }

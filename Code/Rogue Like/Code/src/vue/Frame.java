@@ -37,7 +37,7 @@ public class Frame extends JFrame {
         jplPrincipal.add(glCarac, BorderLayout.EAST);
         List<Case> lstCase=this.Partie.getSalleActu().getLstCase();
         for (Case c : lstCase) {
-                glCarte.add(new JLabel(c.getSymbole()));
+                //glCarte.add(new JLabel(c.getSymbole()));
         }        
         jplPrincipal.add(glCarte, BorderLayout.WEST);
         jplPrincipal.add(saisie, BorderLayout.NORTH);  

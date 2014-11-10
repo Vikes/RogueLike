@@ -6,10 +6,11 @@ public class Escalier extends Case {
     Salle Salle;
 
 
-    public Escalier(int posx, int posy, boolean desc, Salle Salle) {
+    public Escalier(int posx, int posy, boolean desc, Salle salle) {
         super(posx, posy);
         this.desc = desc;
-        this.Salle = Salle;
+        this.Salle = salle;
+        this.setSymbole();
     }
 
     public Escalier(int posx, int posy) {
@@ -43,11 +44,12 @@ public class Escalier extends Case {
         return this.Salle.getMonstres();
     }
 
-    public void setSymbole(String symbole) {
+    
+    public void setSymbole() {
         if (this.isDesc()) {
-            this.setSymbole("<");
+            super.setSymbole('<');
         } else {
-            this.setSymbole(">");
+            super.setSymbole('>');
         }
     }
 }

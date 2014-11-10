@@ -3,7 +3,7 @@ package metier;
 public class Case {
    
     private int positionX;
-    private String symbole;
+    private char symbole;
     private int positionY;
     private Boolean vue;
     Element Element;
@@ -13,6 +13,7 @@ public class Case {
         super();
         this.positionX = positionX;
         this.positionY = positionY;
+        this.symbole = '.';
         vue = false;
     }
 
@@ -24,11 +25,27 @@ public class Case {
         return positionX;
     }
 
-    public void setSymbole(String symbole) {
-        this.symbole = ".";
+    public void setSymbole(char symbole) {
+        this.symbole = symbole;
+    }
+    
+    
+    public void setSymbole(){
+        if(this.getElement()!=null){
+            if(this.getElement().getType()=="Potion")
+                this.setSymbole('p');
+            else if(this.getElement().getType()=="Trésor")
+                this.setSymbole('$');
+            else if(this.getElement().getType()=="Sortie")
+                this.setSymbole('O');
+            else if(this.getElement().getType()=="Monstre")
+                this.setSymbole('E');
+            else
+                this.setSymbole('?');
+        }
     }
 
-    public String getSymbole() {
+    public char getSymbole() {
         return symbole;
     }
 
@@ -49,9 +66,11 @@ public class Case {
     }
     public void setElement(Element Element) {
         this.Element = Element;
+        this.setSymbole();
     }
-
+    
     public Element getElement() {
         return Element;
     }
 }
+   

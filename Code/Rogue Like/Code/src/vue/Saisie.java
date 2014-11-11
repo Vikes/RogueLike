@@ -12,12 +12,13 @@ public class Saisie extends JPanel{
      * @attribute
      */
     
-    private JTextField tfDeplacement = new JTextField("Votre deplacement :");
-    private JLabel jlDeplacement = new JLabel("Z,Q,S,D");
+    private JTextField tfDeplacement = new JTextField(5);
+    
+    private JLabel jlDeplacement = new JLabel("Votre deplacement (Z,Q,S,D) :");
     private String touche;
     public Saisie(){
         super(new FlowLayout());
+        this.add(jlDeplacement);
         this.add(tfDeplacement);
-        this.add(jlDeplacement);        
     }
 }

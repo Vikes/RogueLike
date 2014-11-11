@@ -14,15 +14,15 @@ public class Caracteristiques extends JPanel {
     private int nbEnnemis;
     private int gold;
     private int niveauAct;
-    private JLabel lblForce=new JLabel("Force :"+this.getForce());
-    private JLabel lblNiveau=new JLabel("Vous êtes au niveau :"+this.getNiveauAct());
-    private JLabel lblGold=new JLabel("Vous avec  :"+this.getGold()+" pièces d'or");
-    private JLabel lblNbEnnemis=new JLabel("Il reste :"+this.getNbEnnemis()+" dans la salle");
-    
+    private JLabel lblForce = new JLabel("Vous avez :" + this.getForce() + " points de force");
+    private JLabel lblGold = new JLabel("Vous avez  :" + this.getGold() + " pièces d'or");
+    private JLabel lblNbEnnemis = new JLabel("Il reste :" + this.getNbEnnemis() + " ennemis dans la salle");
+    private JLabel lblNiveau = new JLabel("Vous êtes au niveau :" + this.getNiveauAct());
+
 
     public Caracteristiques(){
         
-       super(new GridLayout (1,4,1,5));
+       super(new GridLayout (4,1,1,5));
        
         int carac[]=getCaracteristique();
         this.add(lblForce);
@@ -34,8 +34,8 @@ public class Caracteristiques extends JPanel {
     public int[] getCaracteristique() {
         int [] carac = new int[4];
         carac[0] = Partie.getInstance().getPersonnage().getForcePersonnage();
-        carac[1] = Partie.getInstance().getSalleActu().getMonstres();
-        carac[2] = Partie.getInstance().getPersonnage().getArgentPersonnage();
+        carac[1] = Partie.getInstance().getPersonnage().getArgentPersonnage();
+        carac[2] = Partie.getInstance().getSalleActu().getMonstres();
         carac[3] = Partie.getInstance().getSalleActu().getNiveau();
         
         return carac;

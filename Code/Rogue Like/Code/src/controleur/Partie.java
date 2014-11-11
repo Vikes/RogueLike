@@ -2,11 +2,14 @@ package controleur;
 
 import java.util.Collection;
 
+import metier.Case;
 import metier.Escalier;
 import metier.Personnage;
+import metier.Potion;
 import metier.Progressif;
 import metier.Salle;
 import metier.Souterrain;
+import metier.Tresor;
 
 public class Partie {
 
@@ -20,10 +23,10 @@ public class Partie {
 
     public Partie(){
         this.finie = false;
-        this.Souterrain = new Souterrain(new Progressif(10,0.1,3,0.05,0.05));
+        this.Souterrain = new Souterrain(new Progressif(3,0.1,3,0.05,0.05));
         this.Souterrain.getGeneration().genererSouterrain(this.Souterrain);
         this.Personnage = new Personnage("Narkrai");
-        salleActu = this.getSouterrain().getLstSalle().get(0);
+        salleActu = this.getSouterrain().getLstSalle().get(this.getSouterrain().getLstSalle().size()-1);
         partie();
     }
 
@@ -37,45 +40,55 @@ public class Partie {
     }
     
     public void mouvement(char c){
+        boolean bouge = false;
         int x = this.getPersonnage().getCase().getPositionX();
         int y = this.getPersonnage().getCase().getPositionY();
         if(c=='z') {
             if(x-1!=-1){
-                this.getPersonnage().getCase().setSymbole();
                 x--;
-                this.getPersonnage().setCase(this.getSalleActu().getCase(x,y));
-                this.getSalleActu().getCase(x,y).setSymbole('@');
-                this.getSalleActu().vision(x,y);
+                bouge = true;
             }
         }
         else if(c=='q') {
             if(y-1!=-1){
-                this.getPersonnage().getCase().setSymbole();
                 y--;
-                this.getPersonnage().setCase(this.getSalleActu().getCase(x,y));
-                this.getSalleActu().getCase(x,y).setSymbole('@');
-                this.getSalleActu().vision(x,y);
+                bouge = true;
             }
         }
         else if(c=='d') {
             if(y+1!=this.getSalleActu().getLongueur()){
-                this.getPersonnage().getCase().setSymbole();
                 y++;
-                this.getPersonnage().setCase(this.getSalleActu().getCase(x,y));
-                this.getSalleActu().getCase(x,y).setSymbole('@');
-                this.getSalleActu().vision(x,y);
+                bouge = true;
             }
         }        
         else if(c=='s') {
             if(x+1!=this.getSalleActu().getLongueur()){
-                this.getPersonnage().getCase().setSymbole();
                 x++;
-                this.getPersonnage().setCase(this.getSalleActu().getCase(x,y));
-                this.getSalleActu().getCase(x,y).setSymbole('@');
-                this.getSalleActu().vision(x,y);
+                bouge = true;
             }
         }
-        
+        if(bouge) {
+            this.getPersonnage().getCase().setSymbole();
+            this.getPersonnage().setCase(this.getSalleActu().getCase(x,y));
+            if(this.getPersonnage().getCase().getElement()!=null) {
+                Case act = this.getPersonnage().getCase();
+                if(act.getElement().getType()=="Potion"){
+                    Potion p = (Potion) act.getElement();
+                    this.getPersonnage().setForcePersonnage(this.getPersonnage().getForcePersonnage()+p.getBonus());
+                    act.setElement(null);
+                }
+                else if(act.getElement().getType()=="Trésor"){
+                    Tresor t= (Tresor) act.getElement();
+                    this.getPersonnage().setArgentPersonnage(this.getPersonnage().getArgentPersonnage()+t.getArgentTresor());
+                    act.setElement(null);
+                }
+                else if(act.getElement().getType()=="Sortie"){
+                    this.setFinie(true);
+                }
+            }
+            this.getSalleActu().getCase(x,y).setSymbole('@');
+            this.getSalleActu().vision(x,y);
+        }
     }
     
     public void changersalle(){

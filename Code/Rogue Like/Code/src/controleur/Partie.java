@@ -23,8 +23,18 @@ public class Partie {
         this.Souterrain.getGeneration().genererSouterrain(this.Souterrain);
         this.Personnage = new Personnage("Narkrai");
         salleActu = this.getSouterrain().getLstSalle().get(this.getSouterrain().getLstSalle().size()-1);
+        partie();
     }
 
+    public void partie(){
+        int x = (int) (Math.random()*this.getSalleActu().getLongueur());
+        int y = (int) (Math.random()*this.getSalleActu().getLongueur());
+        System.out.println("X : "+x+"Y : "+y);
+        this.getPersonnage().setCase(this.getSalleActu().getCase(x,y));
+        this.getSalleActu().getCase(x,y).setSymbole('@');
+        this.getSalleActu().vision(x,y);
+    }
+    
     public void setTouche(String touche) {
         this.touche = touche;
     }

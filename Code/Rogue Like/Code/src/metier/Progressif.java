@@ -182,9 +182,9 @@ public class Progressif implements Generation {
         System.out.println("Seuils : "+ this.getProbEscalierGen() + " " + (this.getProbEscalierGen()+this.getProbCoffreGen()) +" "+(this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()) + " " + (this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()+(this.getProbMonsterGen()*(1+(this.getProfMax()-pronf)/this.getProfMax()))));
         for(i=0;i<taille;i++) {
             for(j=0;j<taille;j++) {
-                Case c = new Case(i,j);
+                Case c = new Case(j,i);
                 double elem = Math.random(); 
-                System.out.print("Case "+ i + " " + j + " " + elem + " ");
+                System.out.print("Case "+ j + " " + i + " " + elem + " ");
                 //génération escalier descendant
                 if(i==x && j==y) {
                     c = desc;

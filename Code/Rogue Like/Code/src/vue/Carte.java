@@ -25,7 +25,7 @@ public class  Carte  extends JPanel {
         super(new FlowLayout()); 
         this.setPreferredSize(new Dimension(100,100));
         this.setBorder(BorderFactory.createLineBorder((Color.black)));
-        Font resultFont = new Font("Courier", Font.PLAIN, 12);
+        Font resultFont = new Font("monospaced", Font.PLAIN, 12);
         carte = new JTextArea();
         carte.setFont(resultFont);
         this.add(carte);
@@ -42,6 +42,7 @@ public class  Carte  extends JPanel {
     
     public void setCarteText(List<Case> lstCase) {
         String map=" ";
+        String map2=" ";
         Case caseactuelle;
         int ligneactuelle = 0;
         for(int i = 0;i<lstCase.size();i++) {
@@ -49,11 +50,16 @@ public class  Carte  extends JPanel {
             if(caseactuelle.getPositionX()!=ligneactuelle) {
                 ligneactuelle=caseactuelle.getPositionX();
                 map=map+"\n ";
+                map2+="\n";
             }
+            if(caseactuelle.getVue())
             map=map+caseactuelle.getSymbole()+ " ";
+            else
+            map=map+"  ";
+            map2=map2+caseactuelle.getSymbole()+ " ";
         }
         map+="";
-        System.out.println(map);
+        System.out.println(map2);
         this.getCarte().setText(map);
     }
 

@@ -21,10 +21,12 @@ public class Progressif implements Generation {
     private Double probSortieGen=0.05;
     private Double probCaseVideGen;
     private Boolean sortie;
+    private int idSalle;
 
 
     public Progressif(int profMax, Double probEscalierGen, int escalierMax, Double probCoffreGen, Double probPotGen) {
         super();
+        this.idSalle = 0;
         this.profMax = profMax;
         this.probEscalierGen = probEscalierGen;
         this.escalierMax = escalierMax;
@@ -33,6 +35,14 @@ public class Progressif implements Generation {
         this.sortie = false;
     }
 
+
+    public void setIdSalle(int idSalle) {
+        this.idSalle = idSalle;
+    }
+
+    public int getIdSalle() {
+        return idSalle;
+    }
 
     public void setProbSortieGen(Double probSortieGen) {
         this.probSortieGen = probSortieGen;
@@ -178,7 +188,7 @@ public class Progressif implements Generation {
         int i,j;
         int x = (int)(Math.random() * taille);
         int y = (int)(Math.random() * taille);
-        Escalier desc = new Escalier(x,y,true,souterrain.getLstSalle().get(souterrain.getLstSalle().size()-1));
+        Escalier desc = new Escalier(x,y,true,sallepre);
         System.out.println("Seuils : "+ this.getProbEscalierGen() + " " + (this.getProbEscalierGen()+this.getProbCoffreGen()) +" "+(this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()) + " " + (this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()+(this.getProbMonsterGen()*(1+(this.getProfMax()-pronf)/this.getProfMax()))));
         for(i=0;i<taille;i++) {
             for(j=0;j<taille;j++) {

@@ -17,7 +17,7 @@ public class Salle {
      * @param niveau
      * @return
      */
-    public Salle(int longueur, int niveau) {
+    public Salle (int longueur, int niveau) {
         this.longueur = longueur;
         this.niveau = niveau;
         lstCase = new ArrayList<Case>();
@@ -26,7 +26,7 @@ public class Salle {
     /**
      * @associates <{modelisation.Case}>
      */
-
+    
 
     public int getMonstres() {
         int res = 0;
@@ -58,7 +58,7 @@ public class Salle {
     public int getNiveau() {
         return niveau;
     }
-
+    
     public void setLongueur(int longueur) {
         this.longueur = longueur;
     }

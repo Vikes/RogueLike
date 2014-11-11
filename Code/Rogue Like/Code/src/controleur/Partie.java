@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import metier.Case;
 import metier.Escalier;
+import metier.Monstre;
 import metier.Personnage;
 import metier.Potion;
 import metier.Progressif;
@@ -84,6 +85,18 @@ public class Partie {
                 }
                 else if(act.getElement().getType()=="Sortie"){
                     this.setFinie(true);
+                }
+                else if(act.getElement().getType()=="Monstre"){
+                    Monstre m = (Monstre) act.getElement();
+                    Double rand = Math.random();
+                    Double win = (this.getPersonnage().getForcePersonnage()*1.0)/(this.getPersonnage().getForcePersonnage()+m.getForceMonstre());
+                    if(rand<win) {
+                        this.getPersonnage().setArgentPersonnage(this.getPersonnage().getArgentPersonnage()+m.getArgentMonstre());
+                        act.setElement(null);
+                    }
+                    else{
+                        this.getPersonnage().setEnVie(false);
+                    }
                 }
             }
             this.getSalleActu().getCase(x,y).setSymbole('@');

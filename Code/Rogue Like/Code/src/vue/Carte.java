@@ -27,6 +27,7 @@ public class  Carte  extends JPanel {
         this.setBorder(BorderFactory.createLineBorder((Color.black)));
         Font resultFont = new Font("monospaced", Font.PLAIN, 12);
         carte = new JTextArea();
+        carte.setEditable(false);
         carte.setFont(resultFont);
         this.add(carte);
     }
@@ -59,7 +60,7 @@ public class  Carte  extends JPanel {
             map2=map2+caseactuelle.getSymbole()+ " ";
         }
         map+="";
-        System.out.println(map2);
+        //System.out.println(map2);
         this.getCarte().setText(map);
     }
 

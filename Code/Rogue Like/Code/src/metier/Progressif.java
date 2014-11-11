@@ -178,16 +178,17 @@ public class Progressif implements Generation {
         int i,j;
         int x = (int)(Math.random() * taille);
         int y = (int)(Math.random() * taille);
-        Escalier desc = new Escalier(x,y,true,sallepre);
+        Escalier desc = new Escalier(x,y,true,souterrain.getLstSalle().get(souterrain.getLstSalle().size()-1));
         System.out.println("Seuils : "+ this.getProbEscalierGen() + " " + (this.getProbEscalierGen()+this.getProbCoffreGen()) +" "+(this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()) + " " + (this.getProbEscalierGen()+this.getProbCoffreGen()+this.getProbPotGen()+(this.getProbMonsterGen()*(1+(this.getProfMax()-pronf)/this.getProfMax()))));
         for(i=0;i<taille;i++) {
             for(j=0;j<taille;j++) {
-                Case c = new Case(j,i);
+                Case c = new Case(i,j);
                 double elem = Math.random(); 
                 System.out.print("Case "+ j + " " + i + " " + elem + " ");
                 //génération escalier descendant
                 if(i==x && j==y) {
                     c = desc;
+                    s.setEscalier(desc);
                 }
                 //génération escalier
                 else if(elem<=this.getProbEscalierGen()) {
@@ -195,10 +196,10 @@ public class Progressif implements Generation {
                         if(nbescaliers<this.getEscalierMax()) {
                             int tailleSalle = (int)(Math.random() * (15-10))+10;
                             Salle salleSuiv = new Salle(tailleSalle,pronf+1);
-                            Escalier e = new Escalier(i,j,false,salleSuiv);
-                            System.out.println("Escalier");
-                            c = e;
                             genererSalle(souterrain,s,pronf-1);
+                            Escalier e = new Escalier(i,j,false,souterrain.getLstSalle().get(souterrain.getLstSalle().size()-1));                         
+                            c = e;
+                            System.out.println("Escalier "+ c.getPositionX() + " " + c.getPositionY());
                             nbescaliers++;
                             this.setProbEscalierGen(this.getProbEscalierGen()/2);
                         }
@@ -256,7 +257,8 @@ public class Progressif implements Generation {
     public void genererSouterrain(Souterrain souterrain){
             int taille = (int)(Math.random() * (15-10))+10;
             int nbescaliers = 0;
-            Salle s = new Salle(taille,this.getProfMax());
+            souterrain.getLstSalle().add(new Salle(taille,this.getProfMax()));
+            Salle s = souterrain.getLstSalle().get(0);
             List<Case> salle = s.getLstCase();
             int i,j;
             int x = (int)(Math.random() * taille);
@@ -272,10 +274,10 @@ public class Progressif implements Generation {
                         if(nbescaliers<this.getEscalierMax()) {
                             int tailleSalle = (int)(Math.random() * (15-10))+10;
                             Salle salleSuiv = new Salle(tailleSalle,1);
-                            Escalier e = new Escalier(i,j,false,salleSuiv);
-                            System.out.println("Escalier");
-                            c = e;
                             genererSalle(souterrain,s,this.getProfMax()-1);
+                            Escalier e = new Escalier(i,j,false,souterrain.getLstSalle().get(souterrain.getLstSalle().size()-1));
+                            System.out.println("Escalier "+ e.getPositionX() + " " + e.getPositionY());
+                            c = e;
                             nbescaliers++;
                             this.setProbEscalierGen(this.getProbEscalierGen()/2);
                         }
@@ -319,7 +321,6 @@ public class Progressif implements Generation {
             if(this.getSortie()==false) {
                 souterrain.getLstSalle().get(0).getLstCase().get(0).setElement(new Sortie());
             }
-            souterrain.getLstSalle().add(s);
         }
     
 

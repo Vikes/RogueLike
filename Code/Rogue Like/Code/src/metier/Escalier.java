@@ -13,6 +13,10 @@ public class Escalier extends Case {
         this.setSymbole();
     }
 
+    public  String getType(){
+        return "Escalier";
+    }
+    
     public Escalier(int posx, int posy) {
         super(posx, posy);
     }
@@ -35,9 +39,7 @@ public class Escalier extends Case {
 
 
     public int getOr() {
-
         return this.Salle.getOr();
-
     }
 
     public int getMonstres() {

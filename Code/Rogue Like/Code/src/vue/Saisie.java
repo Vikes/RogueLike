@@ -18,6 +18,31 @@ public class Saisie extends JPanel{
     public Saisie(){
         super(new FlowLayout());
         this.add(tfDeplacement);
-        this.add(jlDeplacement);        
+        this.add(jlDeplacement);  
+        this.getTfDeplacement().setEditable(false);
+    }
+
+    public void setTfDeplacement(JTextField tfDeplacement) {
+        this.tfDeplacement = tfDeplacement;
+    }
+
+    public JTextField getTfDeplacement() {
+        return tfDeplacement;
+    }
+
+    public void setJlDeplacement(JLabel jlDeplacement) {
+        this.jlDeplacement = jlDeplacement;
+    }
+
+    public JLabel getJlDeplacement() {
+        return jlDeplacement;
+    }
+
+    public void setTouche(String touche) {
+        this.touche = touche;
+    }
+
+    public String getTouche() {
+        return touche;
     }
 }

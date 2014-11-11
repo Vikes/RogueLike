@@ -21,6 +21,9 @@ public class Case {
         this.positionX = positionX;
     }
 
+    public String getType() {
+        return "Case";
+    }
     public int getPositionX() {
         return positionX;
     }
@@ -40,11 +43,11 @@ public class Case {
                 this.setSymbole('O');
             else if(this.getElement().getType()=="Monstre")
                 this.setSymbole('E');
-            else
-                this.setSymbole('?');
         }
+        else
+            this.setSymbole('.');
     }
-
+    
     public char getSymbole() {
         return symbole;
     }

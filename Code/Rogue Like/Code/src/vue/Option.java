@@ -66,9 +66,4 @@ public class Option extends JFrame {
               });
 
     }
-     public static  void main(String[] args) {
-         System.out.println("tortue");
-            Option f = new Option();
-            f.setVisible(true);
-     }
 }

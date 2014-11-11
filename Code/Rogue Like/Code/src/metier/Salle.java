@@ -9,7 +9,7 @@ public class Salle {
     private int niveau;
     private int longueur;
     List<Case> lstCase;
-    Escalier endEscalier;
+    Escalier escalier;
 
     /**
      * @param largeur
@@ -17,7 +17,7 @@ public class Salle {
      * @param niveau
      * @return
      */
-    public Salle(int longueur, int niveau) {
+    public Salle (int longueur, int niveau) {
         this.longueur = longueur;
         this.niveau = niveau;
         lstCase = new ArrayList<Case>();
@@ -26,7 +26,7 @@ public class Salle {
     /**
      * @associates <{modelisation.Case}>
      */
-
+    
 
     public int getMonstres() {
         int res = 0;
@@ -58,7 +58,7 @@ public class Salle {
     public int getNiveau() {
         return niveau;
     }
-
+    
     public void setLongueur(int longueur) {
         this.longueur = longueur;
     }
@@ -67,12 +67,12 @@ public class Salle {
         return longueur;
     }
 
-    public void setEndEscalier(Escalier endEscalier) {
-        this.endEscalier = endEscalier;
+    public void setEscalier(Escalier endEscalier) {
+        this.escalier = endEscalier;
     }
 
-    public Escalier getEndEscalier() {
-        return endEscalier;
+    public Escalier getEscalier() {
+        return escalier;
     }
 
     public void setLstCase(List<Case> lstCase) {
@@ -101,7 +101,7 @@ public class Salle {
                 i+=this.getLongueur();
             }
         }
-        System.out.println("Position dans la liste : "+i);
+        //System.out.println("Position dans la liste : "+i);
         return res;
     }
     
@@ -110,9 +110,9 @@ public class Salle {
         int i,j;
         for(i=-1;i<2;i++) {
             for(j=-1;j<2;j++) {
-                System.out.println("Pour la case X : "+(X+i)+" Y : "+(Y+j));
+               // System.out.println("Pour la case X : "+(X+i)+" Y : "+(Y+j));
                 if((X+i<-1||X+i>=this.getLongueur()||Y+j<-1||Y+j>=this.getLongueur())) {
-                    System.out.println("Hors limite case X : "+(X+i)+" Y : "+(Y+j));
+                  //  System.out.println("Hors limite case X : "+(X+i)+" Y : "+(Y+j));
                 }
                 else {
                     this.getCase(X+i,Y+j).setVue(true);

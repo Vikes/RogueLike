@@ -1,6 +1,6 @@
 package metier;
 
-public class Basique implements Generation {
+public class Basique {
 
     private int profMax;
     private Double probEscalierGen;
@@ -18,8 +18,8 @@ public class Basique implements Generation {
     private int maxForceMonstre;
     private Double probCaseVideGen;
     
-    public void genererSalle(Souterrain souterrain,Salle sallepre,int pronf) {
-        
+    public Salle genererSalle(Souterrain souterrain,Salle sallepre,int pronf) {
+        return new Salle(5,5);
     }
     
     public void genererSouterrain(Souterrain souterrain){

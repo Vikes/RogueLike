@@ -1,21 +1,60 @@
 package vue;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 
-import javax.swing.JLabel;
+import java.util.List;
+import javax.swing.BorderFactory;
+import javax.swing.JTextArea;
 import javax.swing.JPanel;
+import metier.Case;
 
 
 public class  Carte  extends JPanel {
+    private JTextArea carte;
     /**
      * @attribute
      * @associates <{String}>
      */
     //private String[] carte;
     public  Carte() {
-        super(new GridLayout (400,300,1,1)); 
-        
+        super(new FlowLayout()); 
+        this.setPreferredSize(new Dimension(100,100));
+        this.setBorder(BorderFactory.createLineBorder((Color.black)));
+        Font resultFont = new Font("Courier", Font.PLAIN, 12);
+        carte = new JTextArea();
+        carte.setFont(resultFont);
+        this.add(carte);
+    }
+
+
+    public void setCarte(JTextArea carte) {
+        this.carte = carte;
+    }
+
+    public JTextArea getCarte() {
+        return carte;
     }
     
+    public void setCarteText(List<Case> lstCase) {
+        String map=" ";
+        Case caseactuelle;
+        int ligneactuelle = 0;
+        for(int i = 0;i<lstCase.size();i++) {
+            caseactuelle = lstCase.get(i);
+            if(caseactuelle.getPositionX()!=ligneactuelle) {
+                ligneactuelle=caseactuelle.getPositionX();
+                map=map+"\n ";
+            }
+            map=map+caseactuelle.getSymbole()+ " ";
+        }
+        map+="";
+        System.out.println(map);
+        this.getCarte().setText(map);
+    }
+
 }

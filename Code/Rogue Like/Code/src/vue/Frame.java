@@ -31,12 +31,11 @@ public class Frame extends JFrame {
         Caracteristiques glCarac = new Caracteristiques();
         Carte glCarte = new Carte();
         Saisie saisie = new Saisie();
-        jplPrincipal.add(glCarac, BorderLayout.EAST);
+        jplPrincipal.add(glCarac, BorderLayout.SOUTH);
         List<Case> lstCase=this.Partie.getSalleActu().getLstCase();
-        for (Case c : lstCase) {
-                glCarte.add(new JLabel(""+c.getSymbole()));
-        }        
-        jplPrincipal.add(glCarte, BorderLayout.WEST);
+        System.out.println("Taille de la salle : " + this.Partie.getSalleActu().getLongueur());
+        glCarte.setCarteText(lstCase); 
+        jplPrincipal.add(glCarte, BorderLayout.CENTER);
         jplPrincipal.add(saisie, BorderLayout.NORTH);  
         this.setTitle("Rogue Like");
         this.setContentPane(jplPrincipal);

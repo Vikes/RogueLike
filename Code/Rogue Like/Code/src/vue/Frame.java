@@ -23,7 +23,7 @@ import metier.Tresor;
 
 public class Frame extends JFrame {
     private Partie Partie;
-    private Caracteristiques Caracteristques;
+    private Caracteristiques carac;
     private Message Message;
     private Perception endPerception;
     private Saisie saisie;
@@ -33,10 +33,10 @@ public class Frame extends JFrame {
     public Frame() {
         this.Partie = new Partie();
         JPanel jplPrincipal = new JPanel(new BorderLayout());
-        Caracteristiques glCarac = new Caracteristiques();
+        carac = new Caracteristiques();
         carte = new Carte();
         final Saisie saisie = new Saisie();
-        jplPrincipal.add(glCarac, BorderLayout.SOUTH);
+        jplPrincipal.add(carac, BorderLayout.SOUTH);
         List<Case> lstCase=this.Partie.getSalleActu().getLstCase();
         System.out.println("Taille de la salle : " + this.Partie.getSalleActu().getLongueur());
         carte.setCarteText(lstCase); 
@@ -45,7 +45,8 @@ public class Frame extends JFrame {
         this.setTitle("Rogue Like");
         this.setContentPane(jplPrincipal);
         this.setSize(600, 400);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        this.getCarac().update();
         saisie.getTfDeplacement().addKeyListener(new KeyListener(){
             public void keyPressed(KeyEvent e) {
                 if(e.getKeyCode()==90||e.getKeyCode()==81||e.getKeyCode()==83||e.getKeyCode()==68){
@@ -82,12 +83,20 @@ public class Frame extends JFrame {
                     
             }
         }
+        this.getCarac().update();
         
         
     }
-    
-    
-    
+
+
+    public void setCarac(Caracteristiques carac) {
+        this.carac = carac;
+    }
+
+    public Caracteristiques getCarac() {
+        return carac;
+    }
+
     public void setPartie(Partie Partie) {
         this.Partie = Partie;
     }

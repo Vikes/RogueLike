@@ -28,6 +28,7 @@ public class Partie {
         this.Souterrain.getGeneration().genererSouterrain(this.Souterrain);
         this.Personnage = new Personnage("Narkrai");
         salleActu = this.getSouterrain().getLstSalle().get(this.getSouterrain().getLstSalle().size()-1);
+        Instance = this;
         partie();
     }
 
@@ -76,6 +77,8 @@ public class Partie {
                 if(act.getElement().getType()=="Potion"){
                     Potion p = (Potion) act.getElement();
                     this.getPersonnage().setForcePersonnage(this.getPersonnage().getForcePersonnage()+p.getBonus());
+                    System.out.println("Force potion : "+p.getBonus());
+                    System.out.println("Force perso : "+this.getPersonnage().getForcePersonnage());
                     act.setElement(null);
                 }
                 else if(act.getElement().getType()=="Trésor"){
@@ -188,7 +191,7 @@ public class Partie {
 
     public static Partie getInstance() {
         if (Instance == null) {
-            Instance = new Partie();
+            new Partie();
         }
         return Instance;
     }

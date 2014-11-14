@@ -22,10 +22,10 @@ public class Perception extends JOptionPane{
         JOptionPane jop = new JOptionPane();
     }
        
-    public static int showPerception(int ForceMonstre,int Or, Perception jop) {
+    public int showPerception(int ForceMonstre,int Or) {
         
         
-        int test=jop.showConfirmDialog(null, "Force totale des monstres : "+ForceMonstre+"\nNombre de pièces d'or : "+Or+"\nVoulez-vous emprunter cet escalier ?", "Utilisation d'escalier",
+        int test=this.showConfirmDialog(null, "Force totale des monstres : "+ForceMonstre+"\nNombre de pièces d'or : "+Or+"\nVoulez-vous emprunter cet escalier ?", "Utilisation d'escalier",
         JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
         
         return test;

@@ -1,6 +1,7 @@
 package vue;
 
 import controleur.Partie;
+import vue.Perception;
 
 import java.awt.BorderLayout;
 
@@ -65,11 +66,21 @@ public class Frame extends JFrame {
         this.getPartie().mouvement(c);
         carte.setCarteText(this.Partie.getSalleActu().getLstCase());
         if(this.getPartie().getPersonnage().getCase() instanceof Escalier) {
-            System.out.println("Salle précédente "+this.getPartie().getSalleActu().hashCode());
-            this.getPartie().changersalle();
-            System.out.println("Salle actuelle "+this.getPartie().getSalleActu().hashCode());
-            this.getPartie().getSalleActu().vision(this.getPartie().getPersonnage().getCase().getPositionX(),this.getPartie().getPersonnage().getCase().getPositionY());
-            carte.setCarteText(this.Partie.getSalleActu().getLstCase());
+            Perception perc=new Perception();
+            Escalier esca=(Escalier)this.getPartie().getPersonnage().getCase();
+            Integer orEsca=esca.getOr();
+            Integer forceMonstre=esca.getMonstres();
+            if(perc.showPerception(forceMonstre,orEsca)==0) {
+                System.out.println("Salle précédente "+this.getPartie().getSalleActu().hashCode());
+                this.getPartie().changersalle();            
+                System.out.println("Salle actuelle "+this.getPartie().getSalleActu().hashCode());
+                this.getPartie().getSalleActu().vision(this.getPartie().getPersonnage().getCase().getPositionX(),this.getPartie().getPersonnage().getCase().getPositionY());
+                carte.setCarteText(this.Partie.getSalleActu().getLstCase());
+            }
+            else
+            {
+                    
+            }
         }
         
         

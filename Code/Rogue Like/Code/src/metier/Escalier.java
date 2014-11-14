@@ -1,5 +1,7 @@
 package metier;
 
+import java.util.List;
+
 public class Escalier extends Case {
 
     private boolean desc;
@@ -43,7 +45,24 @@ public class Escalier extends Case {
     }
 
     public int getMonstres() {
-        return this.Salle.getMonstres();
+        int res=0;
+        List<Case>  listCase= this.getSalle().getLstCase();
+        for(int i = 0;i<listCase.size();i++) 
+        {
+            Case caseActuelle = listCase.get(i);
+            if(caseActuelle.getType()=="Monstre") {
+                res+=1;
+            }
+            else if (caseActuelle.getType()=="Escalier")
+            {
+                Escalier caseActuelleEscalier= (Escalier) caseActuelle;
+                if(!caseActuelleEscalier.isDesc())
+                {
+                    caseActuelleEscalier.getMonstres();
+                }
+            }            
+        }
+            return res;
     }
 
     

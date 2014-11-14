@@ -14,10 +14,10 @@ public class Progressif implements Generation {
     private int minPot=-5; 
     private int maxPot=5;
     private Double probMonsterGen=0.025;
-    private int minOrMonstre;
-    private int minForceMonstre;
-    private int maxOrMonstre;
-    private int maxForceMonstre;
+    private int minOrMonstre=25;
+    private int minForceMonstre=1;
+    private int maxOrMonstre=50;
+    private int maxForceMonstre=5;
     private Double probSortieGen=0.05;
     private Double probCaseVideGen;
     private Boolean sortie;

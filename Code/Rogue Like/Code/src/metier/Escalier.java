@@ -15,10 +15,10 @@ public class Escalier extends Case {
         this.setSymbole();
     }
 
-    public  String getType(){
+    public String getType() {
         return "Escalier";
     }
-    
+
     public Escalier(int posx, int posy) {
         super(posx, posy);
     }
@@ -41,31 +41,52 @@ public class Escalier extends Case {
 
 
     public int getOr() {
-        return this.Salle.getOr();
+
+        int res = 0;
+        List<Case> listCase = this.getSalle().getLstCase();
+        System.out.println(this.getSalle().getNiveau());
+        for (int i = 0; i < listCase.size(); i++) {
+
+            Case caseActuelle = listCase.get(i);
+            if (caseActuelle.getElement() != null) {
+                if (caseActuelle.getElement().getType() == "Trésor") {
+                    Tresor caseActuelleTresor = (Tresor) caseActuelle.getElement();
+                    res += caseActuelleTresor.getArgentTresor();
+
+
+                }
+            } else if (caseActuelle.getType() == "Escalier") {
+
+                Escalier caseActuelleEscalier = (Escalier) caseActuelle;
+                if (!caseActuelleEscalier.isDesc()) {
+
+                    res += caseActuelleEscalier.getOr();
+                }
+            }
+        }
+        return res;
     }
 
     public int getMonstres() {
-        int res=0;
-        List<Case>  listCase= this.getSalle().getLstCase();
-        for(int i = 0;i<listCase.size();i++) 
-        {
+        int res = 0;
+        List<Case> listCase = this.getSalle().getLstCase();
+        for (int i = 0; i < listCase.size(); i++) {
             Case caseActuelle = listCase.get(i);
-            if(caseActuelle.getType()=="Monstre") {
-                res+=1;
-            }
-            else if (caseActuelle.getType()=="Escalier")
-            {
-                Escalier caseActuelleEscalier= (Escalier) caseActuelle;
-                if(!caseActuelleEscalier.isDesc())
-                {
-                    caseActuelleEscalier.getMonstres();
+            if (caseActuelle.getElement() != null) {
+                if (caseActuelle.getElement().getType() == "Monstre") {
+                    res += 1;
                 }
-            }            
+            } else if (caseActuelle.getType() == "Escalier") {
+                Escalier caseActuelleEscalier = (Escalier) caseActuelle;
+                if (!caseActuelleEscalier.isDesc()) {
+                    res+=caseActuelleEscalier.getMonstres();
+                }
+            }
         }
-            return res;
+        return res;
     }
 
-    
+
     public void setSymbole() {
         if (this.isDesc()) {
             super.setSymbole('<');

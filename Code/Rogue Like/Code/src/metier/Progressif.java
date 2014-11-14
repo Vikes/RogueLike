@@ -11,8 +11,8 @@ public class Progressif implements Generation {
     private int minCoffre=25;
     private int maxCoffre=50;
     private Double probPotGen;
-    private int minPot; 
-    private int maxPot;
+    private int minPot=-5; 
+    private int maxPot=5;
     private Double probMonsterGen=0.025;
     private int minOrMonstre;
     private int minForceMonstre;

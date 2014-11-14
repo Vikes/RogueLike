@@ -40,6 +40,18 @@ public class Caracteristiques extends JPanel {
         
         return carac;
     }
+    
+    public void update() {
+            int[] carac = this.getCaracteristique();
+            this.setForce(carac[0]);
+            this.setGold(carac[1]);
+            this.setNbEnnemis(carac[2]);
+            this.setNiveauAct(carac[3]);
+            this.getLblForce().setText("Vous avez :" + this.getForce() + " points de force");
+            this.getLblGold().setText("Vous avez  :" + this.getGold() + " pièces d'or");
+            this.getLblNbEnnemis().setText("Il reste :" + this.getNbEnnemis() + " ennemis dans la salle");
+            this.getLblNiveau().setText("Vous êtes au niveau :" + this.getNiveauAct());
+        }
 
     public void setForce(int force) {
         this.force = force;
@@ -72,4 +84,36 @@ public class Caracteristiques extends JPanel {
     public void setNiveauAct(int niveauAct) {
         this.niveauAct = niveauAct;
     }
+    
+    public void setLblForce(JLabel lblForce) {
+           this.lblForce = lblForce;
+       }
+
+       public JLabel getLblForce() {
+           return lblForce;
+       }
+
+       public void setLblGold(JLabel lblGold) {
+           this.lblGold = lblGold;
+       }
+
+       public JLabel getLblGold() {
+           return lblGold;
+       }
+
+       public void setLblNbEnnemis(JLabel lblNbEnnemis) {
+           this.lblNbEnnemis = lblNbEnnemis;
+       }
+
+       public JLabel getLblNbEnnemis() {
+           return lblNbEnnemis;
+       }
+
+       public void setLblNiveau(JLabel lblNiveau) {
+           this.lblNiveau = lblNiveau;
+       }
+
+       public JLabel getLblNiveau() {
+           return lblNiveau;
+       }
 }

@@ -25,7 +25,7 @@ public class Frame extends JFrame {
     private Caracteristiques Caracteristques;
     private Message Message;
     private Perception endPerception;
-    private Saisie Saisie;
+    private Saisie saisie;
     private Carte carte;
     private Option Option;
 
@@ -74,6 +74,8 @@ public class Frame extends JFrame {
         
         
     }
+    
+    
     
     public void setPartie(Partie Partie) {
         this.Partie = Partie;

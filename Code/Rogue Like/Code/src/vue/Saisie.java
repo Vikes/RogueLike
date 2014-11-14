@@ -16,6 +16,32 @@ public class Saisie extends JPanel{
     
     private JLabel jlDeplacement = new JLabel("Votre deplacement (Z,Q,S,D) :");
     private String touche;
+
+
+    public void setTfDeplacement(JTextField tfDeplacement) {
+        this.tfDeplacement = tfDeplacement;
+    }
+
+    public JTextField getTfDeplacement() {
+        return tfDeplacement;
+    }
+
+    public void setJlDeplacement(JLabel jlDeplacement) {
+        this.jlDeplacement = jlDeplacement;
+    }
+
+    public JLabel getJlDeplacement() {
+        return jlDeplacement;
+    }
+
+    public void setTouche(String touche) {
+        this.touche = touche;
+    }
+
+    public String getTouche() {
+        return touche;
+    }
+
     public Saisie(){
         super(new FlowLayout());
         this.add(jlDeplacement);

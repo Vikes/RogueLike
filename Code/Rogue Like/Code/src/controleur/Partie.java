@@ -93,6 +93,8 @@ public class Partie {
                     Monstre m = (Monstre) act.getElement();
                     Double rand = Math.random();
                     Double win = (this.getPersonnage().getForcePersonnage()*1.0)/(this.getPersonnage().getForcePersonnage()+m.getForceMonstre());
+                    System.out.println("Force du monstre : "+m.getForceMonstre());
+                    System.out.println("Random : "+ rand +" Seuil : "+ win);
                     if(rand<win) {
                         this.getPersonnage().setArgentPersonnage(this.getPersonnage().getArgentPersonnage()+m.getArgentMonstre());
                         act.setElement(null);

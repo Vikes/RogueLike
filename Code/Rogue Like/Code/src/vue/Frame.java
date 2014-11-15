@@ -37,7 +37,7 @@ public class Frame extends JFrame {
         carac = new Caracteristiques();
         carte = new Carte();
         final Saisie saisie = new Saisie();
-        jplPrincipal.add(carac, BorderLayout.SOUTH);
+        jplPrincipal.add(carac, BorderLayout.EAST);
         List<Case> lstCase = this.Partie.getSalleActu().getLstCase();
         System.out.println("Taille de la salle : " + this.Partie.getSalleActu().getLongueur());
         carte.setCarteText(lstCase);

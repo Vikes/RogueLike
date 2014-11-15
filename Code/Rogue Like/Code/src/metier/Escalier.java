@@ -74,7 +74,8 @@ public class Escalier extends Case {
             Case caseActuelle = listCase.get(i);
             if (caseActuelle.getElement() != null) {
                 if (caseActuelle.getElement().getType() == "Monstre") {
-                    res += 1;
+                    Monstre m = (Monstre) caseActuelle.getElement();
+                    res += m.getForceMonstre();
                 }
             } else if (caseActuelle.getType() == "Escalier") {
                 Escalier caseActuelleEscalier = (Escalier) caseActuelle;

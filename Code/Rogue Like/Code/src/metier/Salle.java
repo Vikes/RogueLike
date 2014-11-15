@@ -52,6 +52,7 @@ public class Salle {
 
         return res;
     }
+    
     public void setNiveau(int niveau) {
         this.niveau = niveau;
     }

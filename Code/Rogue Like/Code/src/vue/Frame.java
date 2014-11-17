@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import metier.Case;
@@ -88,10 +89,14 @@ public class Frame extends JFrame {
             this.getCarac().update();
             this.getMessage().setMessage(res);
             if(this.getPartie().getFinie()) {
-                //popup gg
+                JOptionPane gg = new JOptionPane();
+               gg.showMessageDialog(null, " Félicitation ! Vous avez gagné ! "," Victoire ! ",
+                JOptionPane.INFORMATION_MESSAGE);
             }
             if(!this.getPartie().getPersonnage().getEnVie()) {
-                //popup dead
+                JOptionPane die = new JOptionPane();
+                die.showMessageDialog(null, " Dommage, vous avez perdu ! "," Défaite ! ",
+                JOptionPane.INFORMATION_MESSAGE);
             }
         }
 

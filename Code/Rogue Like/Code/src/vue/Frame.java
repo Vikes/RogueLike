@@ -90,7 +90,7 @@ public class Frame extends JFrame {
             this.getMessage().setMessage(res);
             if(this.getPartie().getFinie()) {
                 JOptionPane gg = new JOptionPane();
-               gg.showMessageDialog(null, " Félicitation ! Vous avez gagné ! "," Victoire ! ",
+                gg.showMessageDialog(null, " Félicitation ! Vous avez gagné ! "," Victoire ! ",
                 JOptionPane.INFORMATION_MESSAGE);
             }
             if(!this.getPartie().getPersonnage().getEnVie()) {

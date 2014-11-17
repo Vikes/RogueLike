@@ -2,11 +2,17 @@ package vue;
 
 import controleur.Partie;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+
 
 public class Caracteristiques extends JPanel {
     
@@ -23,7 +29,11 @@ public class Caracteristiques extends JPanel {
     public Caracteristiques(){
         
        super(new GridLayout (4,1,1,5));
-       
+        Border line = BorderFactory.createLineBorder(Color.DARK_GRAY);
+        Border empty = new EmptyBorder(10, 10, 10, 10);
+        CompoundBorder border = new CompoundBorder(line, empty);
+        this.setBorder(border);
+        
         int carac[]=getCaracteristique();
         this.add(lblForce);
         this.add(lblGold);

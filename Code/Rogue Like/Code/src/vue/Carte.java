@@ -1,5 +1,6 @@
 package vue;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -22,14 +23,14 @@ public class  Carte  extends JPanel {
      */
     //private String[] carte;
     public  Carte() {
-        super(new FlowLayout()); 
+        super(new BorderLayout()); 
         this.setPreferredSize(new Dimension(100,100));
         this.setBorder(BorderFactory.createLineBorder((Color.black)));
         Font resultFont = new Font("monospaced", Font.PLAIN, 12);
         carte = new JTextArea();
         carte.setEditable(false);
         carte.setFont(resultFont);
-        this.add(carte);
+        this.add(carte,BorderLayout.CENTER);
     }
 
 

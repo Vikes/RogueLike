@@ -19,27 +19,28 @@ import javax.swing.JPanel;
 
 import metier.Case;
 import metier.Escalier;
-import metier.Message;
 import metier.Tresor;
 
 public class Frame extends JFrame {
-    private Partie Partie;
+    private Partie partie;
     private Caracteristiques carac;
-    private Message Message;
+    private Message message;
     private Perception endPerception;
     private Saisie saisie;
     private Carte carte;
     private Option Option;
 
     public Frame() {
-        this.Partie = new Partie();
+        this.partie = new Partie();
         JPanel jplPrincipal = new JPanel(new BorderLayout());
         carac = new Caracteristiques();
         carte = new Carte();
+        message = new Message();
         final Saisie saisie = new Saisie();
         jplPrincipal.add(carac, BorderLayout.EAST);
-        List<Case> lstCase = this.Partie.getSalleActu().getLstCase();
-        System.out.println("Taille de la salle : " + this.Partie.getSalleActu().getLongueur());
+        jplPrincipal.add(message,BorderLayout.SOUTH);
+        List<Case> lstCase = this.partie.getSalleActu().getLstCase();
+        System.out.println("Taille de la salle : " + this.partie.getSalleActu().getLongueur());
         carte.setCarteText(lstCase);
         jplPrincipal.add(carte, BorderLayout.CENTER);
         jplPrincipal.add(saisie, BorderLayout.NORTH);
@@ -67,28 +68,32 @@ public class Frame extends JFrame {
     }
 
     public void touche(char c) {
-        this.getPartie().mouvement(c);
-        carte.setCarteText(this.Partie.getSalleActu().getLstCase());
-        if (this.getPartie().getPersonnage().getCase() instanceof Escalier) {
-            Perception perc = new Perception();
-            Escalier esca = (Escalier) this.getPartie().getPersonnage().getCase();
-            Integer orEsca = esca.getOr();
-            Integer forceMonstre = esca.getMonstres();
-            if (!esca.isDesc()) {
-                if (perc.showPerception(forceMonstre, orEsca) == 0) {
-                    System.out.println("Salle précédente " + this.getPartie().getSalleActu().hashCode());
+        if(!this.getPartie().getFinie()&&this.getPartie().getPersonnage().getEnVie())
+        {
+            String res = this.getPartie().mouvement(c);
+            carte.setCarteText(this.partie.getSalleActu().getLstCase());
+            if(res == "salle") {
+                Escalier esca = (Escalier) this.getPartie().getPersonnage().getCase();
+                Integer orEsca = esca.getOr();
+                Integer forceMonstre = esca.getMonstres();
+                if (new Perception().showPerception(forceMonstre, orEsca) == 0) {
                     this.getPartie().changersalle();
-                    System.out.println("Salle actuelle " + this.getPartie().getSalleActu().hashCode());
-                    this.getPartie().getSalleActu().vision(this.getPartie().getPersonnage().getCase().getPositionX(),
-                                                           this.getPartie().getPersonnage().getCase().getPositionY());
-                    carte.setCarteText(this.Partie.getSalleActu().getLstCase());
+                    carte.setCarteText(this.partie.getSalleActu().getLstCase());
+                    res = "Vous changez de salle";
                 }
-            } 
-            else {
-
+                else {
+                    res = "";
+                }
+            }
+            this.getCarac().update();
+            this.getMessage().setMessage(res);
+            if(this.getPartie().getFinie()) {
+                //popup gg
+            }
+            if(!this.getPartie().getPersonnage().getEnVie()) {
+                //popup dead
             }
         }
-        this.getCarac().update();
 
 
     }
@@ -103,11 +108,19 @@ public class Frame extends JFrame {
     }
 
     public void setPartie(Partie Partie) {
-        this.Partie = Partie;
+        this.partie = Partie;
     }
 
     public Partie getPartie() {
-        return Partie;
+        return partie;
+    }
+
+    public void setMessage(Message message) {
+        this.message = message;
+    }
+
+    public Message getMessage() {
+        return message;
     }
 
     public static void main(String[] args) {

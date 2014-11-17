@@ -14,34 +14,84 @@ import metier.Tresor;
 
 public class Partie {
 
-    private String touche;
-    private Boolean finie;
     private static int argentMax;
-    Souterrain Souterrain;
-    Salle salleActu;
-    static Partie Instance;
-    Personnage Personnage;
+    private static Partie Instance;
+    
+    private Boolean finie;
+    private Souterrain souterrain;
+    private Salle salleActu;
+    private Personnage personnage;
 
     public Partie(){
         this.finie = false;
-        this.Souterrain = new Souterrain(new Progressif(3,0.1,3,0.05,0.05));
-        this.Souterrain.getGeneration().genererSouterrain(this.Souterrain);
-        this.Personnage = new Personnage("Narkrai");
+        this.souterrain = new Souterrain(new Progressif(3,0.1,3,0.05,0.05));
+        this.souterrain.getGeneration().genererSouterrain(this.souterrain);
+        this.personnage = new Personnage("Narkrai");
         salleActu = this.getSouterrain().getLstSalle().get(this.getSouterrain().getLstSalle().size()-1);
         Instance = this;
-        partie();
+        commencerPartie();
     }
 
-    public void partie(){
+    public void setFinie(Boolean finie) {
+        this.finie = finie;
+    }
+
+    public Boolean getFinie() {
+        return finie;
+    }
+
+    public static void setArgentMax(int argentMax) {
+        Partie.argentMax = argentMax;
+    }
+
+    public static int getArgentMax() {
+        return argentMax;
+    }
+
+    public void setSouterrain(Souterrain Souterrain) {
+        this.souterrain = Souterrain;
+    }
+
+    public Souterrain getSouterrain() {
+        return souterrain;
+    }
+
+    public void setSalleActu(Salle salleActu) {
+        this.salleActu = salleActu;
+    }
+
+    public Salle getSalleActu() {
+        return salleActu;
+    }
+
+    public void setPersonnage(Personnage Personnage) {
+        this.personnage = Personnage;
+    }
+
+    public Personnage getPersonnage() {
+        return personnage;
+    }
+
+    public static Partie getInstance() {
+        if (Instance == null) {
+            new Partie();
+        }
+        return Instance;
+    }
+
+    public void commencerPartie(){
         int x = (int) (Math.random()*this.getSalleActu().getLongueur());
         int y = (int) (Math.random()*this.getSalleActu().getLongueur());
-        System.out.println("X : "+x+"Y : "+y);
+        while(this.getSalleActu().getCase(x,y).getElement()!=null) {
+            x = (int) (Math.random()*this.getSalleActu().getLongueur());
+            y = (int) (Math.random()*this.getSalleActu().getLongueur());
+        }
         this.getPersonnage().setCase(this.getSalleActu().getCase(x,y));
-        this.getSalleActu().getCase(x,y).setSymbole('@');
-        this.getSalleActu().vision(x,y);
+        affichermap(x,y);
     }
     
-    public void mouvement(char c){
+    public String mouvement(char c){
+        String res = "Les ténèbres vous traquent ...";
         boolean bouge = false;
         int x = this.getPersonnage().getCase().getPositionX();
         int y = this.getPersonnage().getCase().getPositionY();
@@ -72,41 +122,72 @@ public class Partie {
         if(bouge) {
             this.getPersonnage().getCase().setSymbole();
             this.getPersonnage().setCase(this.getSalleActu().getCase(x,y));
-            if(this.getPersonnage().getCase().getElement()!=null) {
-                Case act = this.getPersonnage().getCase();
+            Case act = this.getPersonnage().getCase();
+            if(act.getElement()!=null) {
+                
                 if(act.getElement().getType()=="Potion"){
-                    Potion p = (Potion) act.getElement();
-                    this.getPersonnage().setForcePersonnage(this.getPersonnage().getForcePersonnage()+p.getBonus());
-                    System.out.println("Force potion : "+p.getBonus());
-                    System.out.println("Force perso : "+this.getPersonnage().getForcePersonnage());
-                    act.setElement(null);
+                   res = potion(act);
                 }
                 else if(act.getElement().getType()=="Trésor"){
-                    Tresor t= (Tresor) act.getElement();
-                    this.getPersonnage().setArgentPersonnage(this.getPersonnage().getArgentPersonnage()+t.getArgentTresor());
-                    act.setElement(null);
+                   res = tresor(act);
                 }
                 else if(act.getElement().getType()=="Sortie"){
                     this.setFinie(true);
+                    res = "Vous avez trouvé la sortie !";
                 }
                 else if(act.getElement().getType()=="Monstre"){
-                    Monstre m = (Monstre) act.getElement();
-                    Double rand = Math.random();
-                    Double win = (this.getPersonnage().getForcePersonnage()*1.0)/(this.getPersonnage().getForcePersonnage()+m.getForceMonstre());
-                    System.out.println("Force du monstre : "+m.getForceMonstre());
-                    System.out.println("Random : "+ rand +" Seuil : "+ win);
-                    if(rand<win) {
-                        this.getPersonnage().setArgentPersonnage(this.getPersonnage().getArgentPersonnage()+m.getArgentMonstre());
-                        act.setElement(null);
-                    }
-                    else{
-                        this.getPersonnage().setEnVie(false);
-                    }
+                   res = combat(act);
                 }
             }
-            this.getSalleActu().getCase(x,y).setSymbole('@');
-            this.getSalleActu().vision(x,y);
+            else if(act instanceof Escalier) {
+                Escalier e = (Escalier) act;
+                if(!e.isDesc()) {
+                    res = "salle";
+                }
+                else{
+                    res = "Vous changez de salle";
+                    changersalle();
+                }
+            }
+            affichermap(x,y);
         }
+        return res;
+    }
+    
+    public String combat(Case act) {
+        String res ="";
+        Monstre m = (Monstre) act.getElement();
+        Double rand = Math.random();
+        Double win = (this.getPersonnage().getForcePersonnage()*1.0)/(this.getPersonnage().getForcePersonnage()+m.getForceMonstre());
+        res+="Vous combattez un monstre de force "+m.getForceMonstre()+ " et vous ";
+        System.out.println("Force du monstre : "+m.getForceMonstre());
+        System.out.println("Random : "+ rand +" Seuil : "+ win);
+        if(rand<win) {
+            this.getPersonnage().setArgentPersonnage(this.getPersonnage().getArgentPersonnage()+m.getArgentMonstre());
+            res+="gagnez !";
+            act.setElement(null);
+        }
+        else{
+            this.getPersonnage().setEnVie(false);
+            res+="perdez ...";
+        }
+        return res;
+    }
+    
+    public String potion(Case act) {
+        Potion p = (Potion) act.getElement();
+        this.getPersonnage().setForcePersonnage(this.getPersonnage().getForcePersonnage()+p.getBonus());
+        System.out.println("Force potion : "+p.getBonus());
+        System.out.println("Force perso : "+this.getPersonnage().getForcePersonnage());
+        act.setElement(null);
+        return "Vous buvez une potion qui vous donne " + p.getBonus() +" de force !";
+    }
+    
+    public String tresor(Case act) {
+        Tresor t= (Tresor) act.getElement();
+        this.getPersonnage().setArgentPersonnage(this.getPersonnage().getArgentPersonnage()+t.getArgentTresor());
+        act.setElement(null);
+        return "Vous trouvez " + t.getArgentTresor() + "or dans le coffre !";
     }
     
     public void changersalle(){
@@ -117,7 +198,7 @@ public class Partie {
            this.setSalleActu(e.getSalle());
            Escalier es = this.getSalleActu().getEscalier();
            this.getPersonnage().setCase(this.getSalleActu().getCase(es.getPositionX(),es.getPositionY()));
-           this.getSalleActu().getCase(es.getPositionX(),es.getPositionY()).setSymbole('@');
+           affichermap(es.getPositionX(),es.getPositionY());
        }
        else {
            Salle suiv = e.getSalle();
@@ -143,70 +224,9 @@ public class Partie {
        }
     }
     
-    public void setTouche(String touche) {
-        this.touche = touche;
+    public void affichermap(int x,int y) {
+        this.getSalleActu().getCase(x,y).setSymbole('@');
+        this.getSalleActu().vision(x,y);
     }
-
-    public String getTouche() {
-        return touche;
-    }
-
-    public void setFinie(Boolean finie) {
-        this.finie = finie;
-    }
-
-    public Boolean getFinie() {
-        return finie;
-    }
-
-    public static void setArgentMax(int argentMax) {
-        Partie.argentMax = argentMax;
-    }
-
-    public static int getArgentMax() {
-        return argentMax;
-    }
-
-    public void setSouterrain(Souterrain Souterrain) {
-        this.Souterrain = Souterrain;
-    }
-
-    public Souterrain getSouterrain() {
-        return Souterrain;
-    }
-
-    public void setSalleActu(Salle salleActu) {
-        this.salleActu = salleActu;
-    }
-
-    public Salle getSalleActu() {
-        return salleActu;
-    }
-
-    public void setPersonnage(Personnage Personnage) {
-        this.Personnage = Personnage;
-    }
-
-    public Personnage getPersonnage() {
-        return Personnage;
-    }
-
-    public static Partie getInstance() {
-        if (Instance == null) {
-            new Partie();
-        }
-        return Instance;
-    }
-
-    public void commencerPartie() {
-        
-    }
-
-    public void Combat() {
-
-    }
-
-    public void Mouvement() {
-
-    }
+    
 }

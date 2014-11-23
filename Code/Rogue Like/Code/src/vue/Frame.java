@@ -6,6 +6,8 @@ import vue.Perception;
 
 import java.awt.BorderLayout;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -15,6 +17,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import javax.swing.JLabel;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -23,28 +28,46 @@ import metier.Escalier;
 import metier.Tresor;
 
 public class Frame extends JFrame {
+    
     private Partie partie;
     private Caracteristiques carac;
     private Message message;
-    private Perception endPerception;
     private Saisie saisie;
     private Carte carte;
-    private Option Option;
+    private JMenuBar menuBar = new JMenuBar();
+    private JMenu menu = new JMenu("Menu");
+    private JMenuItem nouveau = new JMenuItem("Lancer une nouvelle partie");
+    private JMenuItem score = new JMenuItem("Records");
+    
+    
 
     public Frame() {
-        this.partie = new Partie();
         JPanel jplPrincipal = new JPanel(new BorderLayout());
         carac = new Caracteristiques();
         carte = new Carte();
+        saisie = new Saisie();
         message = new Message();
-        final Saisie saisie = new Saisie();
+        this.partie = new Partie();
+        this.menu.add(nouveau);
+        this.menu.add(score);
+        this.menuBar.add(menu);
+        this.setJMenuBar(menuBar);
+        
+        this.nouveau.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                Option option = new Option(this);
+                System.out.println("Coucou " + option.getTfProfMax().getText());
+            }
+        });
         jplPrincipal.add(carac, BorderLayout.EAST);
         jplPrincipal.add(message,BorderLayout.SOUTH);
-        List<Case> lstCase = this.partie.getSalleActu().getLstCase();
-        System.out.println("Taille de la salle : " + this.partie.getSalleActu().getLongueur());
-        carte.setCarteText(lstCase);
         jplPrincipal.add(carte, BorderLayout.CENTER);
-        jplPrincipal.add(saisie, BorderLayout.NORTH);
+        jplPrincipal.add(saisie, BorderLayout.NORTH);;
+        
+    
+        List<Case> lstCase = this.partie.getSalleActu().getLstCase();
+        carte.setCarteText(lstCase);
+        
         this.setTitle("Rogue Like");
         this.setContentPane(jplPrincipal);
         this.setSize(600, 400);
@@ -53,7 +76,6 @@ public class Frame extends JFrame {
         saisie.getTfDeplacement().addKeyListener(new KeyListener() {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == 90 || e.getKeyCode() == 81 || e.getKeyCode() == 83 || e.getKeyCode() == 68) {
-                    saisie.getTfDeplacement().setText("" + e.getKeyChar());
                     touche(e.getKeyChar());
                 }
             }
@@ -69,8 +91,10 @@ public class Frame extends JFrame {
     }
 
     public void touche(char c) {
+        System.out.println(c);
         if(!this.getPartie().getFinie()&&this.getPartie().getPersonnage().getEnVie())
         {
+            this.getSaisie().getTfDeplacement().setText("");
             String res = this.getPartie().mouvement(c);
             carte.setCarteText(this.partie.getSalleActu().getLstCase());
             if(res == "salle") {
@@ -128,8 +152,18 @@ public class Frame extends JFrame {
         return message;
     }
 
+    public void setSaisie(Saisie saisie) {
+        this.saisie = saisie;
+    }
+
+    public Saisie getSaisie() {
+        return saisie;
+    }
+
     public static void main(String[] args) {
         Frame f = new Frame();
         f.setVisible(true);
     }
+    
+
 }

@@ -20,15 +20,17 @@ public class Caracteristiques extends JPanel {
     private int nbEnnemis;
     private int gold;
     private int niveauAct;
-    private JLabel lblForce = new JLabel("Vous avez :" + this.getForce() + " points de force");
-    private JLabel lblGold = new JLabel("Vous avez  :" + this.getGold() + " pièces d'or");
-    private JLabel lblNbEnnemis = new JLabel("Il reste :" + this.getNbEnnemis() + " ennemis dans la salle");
-    private JLabel lblNiveau = new JLabel("Vous êtes au niveau :" + this.getNiveauAct());
+    private int demin;
+    private JLabel lblForce = new JLabel();
+    private JLabel lblGold = new JLabel();
+    private JLabel lblNbEnnemis = new JLabel();
+    private JLabel lblNiveau = new JLabel();
+    private JLabel lblDemin = new JLabel();
 
 
     public Caracteristiques(){
         
-       super(new GridLayout (4,1,1,5));
+       super(new GridLayout (5,1,1,5));
         Border line = BorderFactory.createLineBorder(Color.DARK_GRAY);
         Border empty = new EmptyBorder(10, 10, 10, 10);
         CompoundBorder border = new CompoundBorder(line, empty);
@@ -39,15 +41,16 @@ public class Caracteristiques extends JPanel {
         this.add(lblGold);
         this.add(lblNiveau);
         this.add(lblNbEnnemis);
+        this.add(lblDemin);
         
     }
     public int[] getCaracteristique() {
-        int [] carac = new int[4];
+        int [] carac = new int[5];
         carac[0] = Partie.getInstance().getPersonnage().getForcePersonnage();
         carac[1] = Partie.getInstance().getPersonnage().getArgentPersonnage();
         carac[2] = Partie.getInstance().getSalleActu().getMonstres();
         carac[3] = Partie.getInstance().getSalleActu().getNiveau();
-        
+        carac[4] = Partie.getInstance().getDemin();
         return carac;
     }
     
@@ -57,11 +60,30 @@ public class Caracteristiques extends JPanel {
             this.setGold(carac[1]);
             this.setNbEnnemis(carac[2]);
             this.setNiveauAct(carac[3]);
+            this.setDemin(carac[4]);
             this.getLblForce().setText("Vous avez :" + this.getForce() + " points de force");
             this.getLblGold().setText("Vous avez  :" + this.getGold() + " pièces d'or");
             this.getLblNbEnnemis().setText("Il reste :" + this.getNbEnnemis() + " ennemis dans la salle");
             this.getLblNiveau().setText("Vous êtes au niveau :" + this.getNiveauAct());
+            this.getLblDemin().setText("Il y a : " + this.getDemin() +" monstres autour de vous");
         }
+
+
+    public void setDemin(int demin) {
+        this.demin = demin;
+    }
+
+    public int getDemin() {
+        return demin;
+    }
+
+    public void setLblDemin(JLabel lblDemin) {
+        this.lblDemin = lblDemin;
+    }
+
+    public JLabel getLblDemin() {
+        return lblDemin;
+    }
 
     public void setForce(int force) {
         this.force = force;

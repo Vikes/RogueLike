@@ -87,7 +87,7 @@ public class Salle {
     public Case getCase(int X, int Y) {
         boolean trouve = false;
         int i =0;
-        Case res = new Case(0,0);
+        Case res = null;
         while(trouve==false && i<this.getLstCase().size()) {
             if(this.getLstCase().get(i).getPositionX()==X) {
                 if(this.getLstCase().get(i).getPositionY()==Y) {
@@ -116,6 +116,7 @@ public class Salle {
                   //  System.out.println("Hors limite case X : "+(X+i)+" Y : "+(Y+j));
                 }
                 else {
+                    if(this.getCase(X+i,Y+j)!=null)
                     this.getCase(X+i,Y+j).setVue(true);
                 }
             }

@@ -28,7 +28,8 @@ import metier.Escalier;
 import metier.Tresor;
 
 public class Frame extends JFrame {
-    
+    /**Classe de création du JFrame du jeu, contenant tout les JPanel*/
+
     private Partie partie;
     private Caracteristiques carac;
     private Message message;
@@ -55,7 +56,7 @@ public class Frame extends JFrame {
         
         this.nouveau.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent arg0) {
-                Option option = new Option(this);
+                Option option = new Option();
                 System.out.println("Coucou " + option.getTfProfMax().getText());
             }
         });
@@ -89,7 +90,9 @@ public class Frame extends JFrame {
             }
         });
     }
-
+/** Méthode appelée lors de chaque mouvement
+ * @param Caractère c de mouvement
+*/
     public void touche(char c) {
         System.out.println(c);
         if(!this.getPartie().getFinie()&&this.getPartie().getPersonnage().getEnVie())
@@ -101,7 +104,7 @@ public class Frame extends JFrame {
                 Escalier esca = (Escalier) this.getPartie().getPersonnage().getCase();
                 Integer orEsca = esca.getOr();
                 Integer forceMonstre = esca.getMonstres();
-                if (new Perception().showPerception(forceMonstre, orEsca) == 0) {
+                if (new Perception().showPerception(forceMonstre, orEsca) == 0) { //Si la réponse de Perception est 0, donc positive, on change de salle 
                     this.getPartie().changersalle();
                     carte.setCarteText(this.partie.getSalleActu().getLstCase());
                     res = "Vous changez de salle";
@@ -127,35 +130,63 @@ public class Frame extends JFrame {
 
     }
 
-
+    /**
+     * Méthode qui modifie le JPanel de caractéristiques
+     * @param JPanel de caractéristiques
+     */
+   
     public void setCarac(Caracteristiques carac) {
         this.carac = carac;
     }
-
+    /**
+     * Méthode renvoyant le JPanel de caractéristiques
+     * @return JPanel de caractéristiques
+     */
     public Caracteristiques getCarac() {
         return carac;
     }
-
+    /**
+     * Méthode qui modifie la partie actuelle
+     * @param Partie actuelle
+     */
+    
     public void setPartie(Partie Partie) {
         this.partie = Partie;
     }
-
+    /**
+     * Méthode renvoyant la partie actuelle
+     * @return Partie actuelle
+     */
     public Partie getPartie() {
         return partie;
     }
-
+    /**
+     * Méthode qui modifie le JPanel de message
+     * @param JPanel de message
+     */
+    
     public void setMessage(Message message) {
         this.message = message;
     }
-
+    /**
+     * Méthode renvoyant le JPanel de message
+     * @return JPanel de message
+     */
     public Message getMessage() {
         return message;
     }
-
+    /**
+     * Méthode qui modifie le JPanel de saisie
+     * @param JPanel de saisie
+     */
+    
     public void setSaisie(Saisie saisie) {
         this.saisie = saisie;
     }
-
+    /**
+     * Méthode renvoyant le JPanel de saisie
+     * @return JPanel de saisie
+     */
     public Saisie getSaisie() {
         return saisie;
     }

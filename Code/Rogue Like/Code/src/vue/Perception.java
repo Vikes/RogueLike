@@ -9,19 +9,17 @@ import controleur.Partie;
 
 public class Perception extends JOptionPane{
        
-       //
-       // Fields
-       //
-       
-       
-
-       //
-       // Methods
-       //
+    /**Classe de création du JOptionPane du jeu, apparaissant lorsque le personnage passe sur un escalier montant*/
+/** Constructeur de JPptionPane*/
     public Perception(){
         JOptionPane jop = new JOptionPane();
     }
-       
+    /**
+     * Méthode renvoyant 0 si la personne appuie sur le bouton ok, 1 sinon
+     * @param Force des monstres derrière l'escalier
+     * @param Or derrière l'escalier
+     * @return Int réponse
+     */
     public int showPerception(int ForceMonstre,int Or) {
         
         

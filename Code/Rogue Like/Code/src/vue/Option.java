@@ -18,7 +18,8 @@ import javax.swing.JTextField;
 import metier.Case;
 
 public class Option extends JDialog {
-    
+    /**Classe de création du JDialog de séléction des options et de lancement du jeu*/
+
     JFrame principal;
     JLabel lblProfMax = new JLabel("La profondeur maximum de votre souterrain : ");
     JLabel lblProbEsca = new JLabel("La probabilité de générer un escalier : ");
@@ -32,6 +33,7 @@ public class Option extends JDialog {
     JTextField tfProbPotion = new JTextField(5);
     
     public Option(JFrame jeu){
+        /** */
         super();
         principal = jeu;
         JPanel jpOption = new JPanel(new GridLayout(6,5));
@@ -67,7 +69,10 @@ public class Option extends JDialog {
     public JTextField getTfProfMax() {
         return tfProfMax;
     }
-
+/**
+ * Méthode appelée lors de la confirmation des options de lancement du jeu
+ * s'opérant avec un jeu de tests sur les champs
+ * */
     public void confirmer(){
         if(tfProfMax.getText().length()==0 || tfProbEsca.getText().length()==0 || tfProbMonstre.getText().length()==0 ||tfProbTresor.getText().length()==0 ||tfProbPotion.getText().length()==0 )
         {

@@ -10,17 +10,16 @@ import java.awt.GridLayout;
 
 import java.util.List;
 import javax.swing.BorderFactory;
+import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JPanel;
 import metier.Case;
 
 
 public class  Carte  extends JPanel {
+    /**Classe de création de la carte du jeu*/
     private JTextArea carte;
-    /**
-     * @attribute
-     * @associates <{String}>
-     */
+    
     //private String[] carte;
     public  Carte() {
         super(new BorderLayout()); 
@@ -33,15 +32,24 @@ public class  Carte  extends JPanel {
         this.add(carte,BorderLayout.CENTER);
     }
 
-
+    /**
+     * Méthode qui modifie le JTextArea carte
+     * @param JTextArea carte
+     */   
     public void setCarte(JTextArea carte) {
         this.carte = carte;
     }
-
+    /**
+     * Méthode renvoyant le JTextArea carte
+     * @return JTextArea carte
+     */
     public JTextArea getCarte() {
         return carte;
     }
-    
+    /**
+     * Méthode qui modifie le JTextArea carte avec une liste de case
+     * @param List<Case> lstCase
+     */ 
     public void setCarteText(List<Case> lstCase) {
         String map=" ";
         String map2=" ";

@@ -196,8 +196,6 @@ public class Frame extends JFrame {
     
     public void option(){
         Option option = new Option(this);
-        System.out.println("Wtf");
-        
     }
 
 }

@@ -27,13 +27,7 @@ public class Perception extends JOptionPane{
         JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
         
         return test;
-    }
-    
-  // public static  void main(String[] args) {
-    //   System.out.println("tortue");
-      // Perception jop=new Perception();
-       //Integer test=showPerception(100,10,jop);
-       //System.out.println(test);
-   //}
+    } 
+
 
 }

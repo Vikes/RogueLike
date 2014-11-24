@@ -20,7 +20,6 @@ import metier.Case;
 public class Option extends JDialog {
     /**Classe de création du JDialog de séléction des options et de lancement du jeu*/
 
-    JFrame principal;
     JLabel lblProfMax = new JLabel("La profondeur maximum de votre souterrain : ");
     JLabel lblProbEsca = new JLabel("La probabilité de générer un escalier : ");
     JLabel lblProbMonstre = new JLabel("La probabilité de générer un monstre : ");
@@ -32,16 +31,12 @@ public class Option extends JDialog {
     JTextField tfProbTresor = new JTextField(5);
     JTextField tfProbPotion = new JTextField(5);
     
-    public Option(JFrame jeu){
-        /** */
-        super();
-        principal = jeu;
+    public Option(final Frame frame){
         JPanel jpOption = new JPanel(new GridLayout(6,5));
         this.setContentPane(jpOption);
         JButton jbOk=new JButton();
         jbOk.setText("Ok");
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-
         jpOption.add(lblProfMax);
         jpOption.add(tfProfMax);
         jpOption.add(lblProbEsca);
@@ -53,16 +48,18 @@ public class Option extends JDialog {
         jpOption.add(lblProbPotion);
         jpOption.add(tfProbPotion);
         jpOption.add(jbOk);
-
+        
+        jbOk.addActionListener(new ActionListener() {
+                 public void actionPerformed(ActionEvent e) {
+                    confirmer(frame); 
+                 }
+              });
+        
+        this.setModal(true);
         this.setTitle("Réglage de lancement du Rogue Like");
         this.setSize(600, 500);
         this.setVisible(true);
         
-        jbOk.addActionListener(new ActionListener() {
-                 public void actionPerformed(ActionEvent e) {
-                    confirmer(); 
-                 }
-              });
     }
 
 
@@ -73,7 +70,7 @@ public class Option extends JDialog {
  * Méthode appelée lors de la confirmation des options de lancement du jeu
  * s'opérant avec un jeu de tests sur les champs
  * */
-    public void confirmer(){
+    public void confirmer(Frame frame){
         if(tfProfMax.getText().length()==0 || tfProbEsca.getText().length()==0 || tfProbMonstre.getText().length()==0 ||tfProbTresor.getText().length()==0 ||tfProbPotion.getText().length()==0 )
         {
             JOptionPane alert = new JOptionPane();
@@ -87,7 +84,6 @@ public class Option extends JDialog {
                 System.out.println(tfProbMonstre.getText());
                 System.out.println(tfProbTresor.getText());
                 System.out.println(tfProbPotion.getText());
-                System.exit(0);
             }
     }
 

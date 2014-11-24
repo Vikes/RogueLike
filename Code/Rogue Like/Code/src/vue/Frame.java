@@ -40,7 +40,6 @@ public class Frame extends JFrame {
     private JMenuItem nouveau = new JMenuItem("Lancer une nouvelle partie");
     private JMenuItem score = new JMenuItem("Records");
     
-    
 
     public Frame() {
         JPanel jplPrincipal = new JPanel(new BorderLayout());
@@ -56,8 +55,7 @@ public class Frame extends JFrame {
         
         this.nouveau.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent arg0) {
-                Option option = new Option();
-                System.out.println("Coucou " + option.getTfProfMax().getText());
+                option();
             }
         });
         jplPrincipal.add(carac, BorderLayout.EAST);
@@ -196,5 +194,10 @@ public class Frame extends JFrame {
         f.setVisible(true);
     }
     
+    public void option(){
+        Option option = new Option(this);
+        System.out.println("Wtf");
+        
+    }
 
 }

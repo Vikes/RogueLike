@@ -21,15 +21,11 @@ public class Option extends JDialog {
     /**Classe de création du JDialog de séléction des options et de lancement du jeu*/
 
     JLabel lblProfMax = new JLabel("La profondeur maximum de votre souterrain : ");
-    JLabel lblProbEsca = new JLabel("La probabilité de générer un escalier : ");
-    JLabel lblProbMonstre = new JLabel("La probabilité de générer un monstre : ");
-    JLabel lblProbTresor = new JLabel("La probabilité de générer un trésor : ");
-    JLabel lblProbPotion = new JLabel("La probabilité de générer une potion : ");
+    JLabel lblNomPerso = new JLabel("Le nom de votre personnage : ");
+    
     public JTextField tfProfMax = new JTextField(5);
-    JTextField tfProbEsca = new JTextField(5);
-    JTextField tfProbMonstre = new JTextField(5);
-    JTextField tfProbTresor = new JTextField(5);
-    JTextField tfProbPotion = new JTextField(5);
+    public JTextField tfNomPerso = new JTextField(5);
+   
     
     public Option(final Frame frame){
         JPanel jpOption = new JPanel(new GridLayout(6,5));
@@ -38,15 +34,9 @@ public class Option extends JDialog {
         jbOk.setText("Ok");
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         jpOption.add(lblProfMax);
-        jpOption.add(tfProfMax);
-        jpOption.add(lblProbEsca);
-        jpOption.add(tfProbEsca);
-        jpOption.add(lblProbMonstre);
-        jpOption.add(tfProbMonstre);
-        jpOption.add(lblProbTresor);
-        jpOption.add(tfProbTresor);
-        jpOption.add(lblProbPotion);
-        jpOption.add(tfProbPotion);
+        jpOption.add(tfProfMax);       
+        jpOption.add(lblNomPerso);
+        jpOption.add(tfNomPerso);
         jpOption.add(jbOk);
         
         jbOk.addActionListener(new ActionListener() {
@@ -71,7 +61,7 @@ public class Option extends JDialog {
  * s'opérant avec un jeu de tests sur les champs
  * */
     public void confirmer(Frame frame){
-        if(tfProfMax.getText().length()==0 || tfProbEsca.getText().length()==0 || tfProbMonstre.getText().length()==0 ||tfProbTresor.getText().length()==0 ||tfProbPotion.getText().length()==0 )
+        if(tfProfMax.getText().length()==0 || tfNomPerso.getText().length()==0 )
         {
             JOptionPane alert = new JOptionPane();
             alert.showMessageDialog(null, " Attention champs vide ! "," Erreur ! ",
@@ -80,10 +70,8 @@ public class Option extends JDialog {
         }
         else{  
                 System.out.println(tfProfMax.getText());
-                System.out.println(tfProbEsca.getText());
-                System.out.println(tfProbMonstre.getText());
-                System.out.println(tfProbTresor.getText());
-                System.out.println(tfProbPotion.getText());
+                System.out.println(tfNomPerso.getText());
+                
             }
     }
 
